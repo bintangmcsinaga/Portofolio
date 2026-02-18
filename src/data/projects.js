@@ -1,0 +1,32 @@
+export const projects = [
+    {
+        id: 'e-commerce-platform',
+        title: 'E-Commerce Platform',
+        description: 'A full-stack e-commerce solution with real-time inventory and secure payments.',
+        fullDescription: 'This e-commerce platform was built to provide a seamless shopping experience. It features real-time inventory tracking using WebSockets, secure payment processing with Stripe, and a comprehensive admin dashboard for managing products and orders.',
+        tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+        image: 'https://placehold.co/1200x600/1e293b/cyan?text=E-Commerce+Platform',
+        date: 'Jan 2024',
+        link: '#',
+    },
+    {
+        id: 'portfolio-v1',
+        title: 'Portfolio V1',
+        description: 'My previous portfolio site focused on minimalism and typography.',
+        fullDescription: 'The first iteration of my personal portfolio. It was designed with a heavy focus on typography and whitespace to create a clean, minimalist aesthetic. Built with vanilla HTML/SCSS to ensure maximum performance.',
+        tags: ['HTML', 'Sass', 'JavaScript'],
+        image: 'https://placehold.co/1200x600/1e293b/cyan?text=Portfolio+V1',
+        date: 'Jun 2023',
+        link: '#',
+    },
+    {
+        id: 'task-management-app',
+        title: 'Task Management App',
+        description: 'A productivity tool for teams to collaborate and track progress.',
+        fullDescription: 'A collaborative task management tool inspired by Trello. It allows teams to create boards, lists, and cards, assign tasks to members, and track progress in real-time. Features drag-and-drop functionality and instant updates.',
+        tags: ['Vue.js', 'Firebase', 'Tailwind'],
+        image: 'https://placehold.co/1200x600/1e293b/cyan?text=Task+Management',
+        date: 'Dec 2023',
+        link: '#',
+    },
+];
