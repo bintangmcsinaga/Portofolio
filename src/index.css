@@ -21,8 +21,9 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  /* Hide default cursor */
-  @apply bg-gray-950 text-white overflow-x-hidden;
+  background-color: #0f172a;
+  /* Slate 900 fallback */
+  @apply text-white overflow-x-hidden;
 }
 
 /* Custom Scrollbar */

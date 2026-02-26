@@ -33,7 +33,7 @@ const Hero = () => {
                     transition={{ duration: 0.5, delay: 0.4 }}
                     className="text-xl md:text-2xl text-gray-400 mb-8 max-w-2xl mx-auto"
                 >
-                    A Creative Developer crafting aesthetic and functional web experiences.
+                    A backend-focused developer experienced in building information systems and SaaS applications, with a strong emphasis on scalable architecture, API development, database management, and system reliability.
                 </motion.p>
 
                 <motion.div
