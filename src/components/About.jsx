@@ -15,6 +15,9 @@ const About = () => {
         { name: 'MongoDB', icon: <SiMongodb />, color: 'text-green-400' },
         { name: 'Git', icon: <FaGitAlt />, color: 'text-orange-500' },
         { name: 'Kubernetes', icon: <SiKubernetes />, color: 'text-blue-600' },
+        { name: 'Prisma ORM', icon: <FaDatabase />, color: 'text-gray-400' },
+        { name: 'Figma', icon: <FaFigma />, color: 'text-pink-400' },
+        { name: 'flutter', icon: <FaFlutter />, color: 'text-blue-400' },
     ];
 
     return (
