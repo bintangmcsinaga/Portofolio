@@ -1,23 +1,25 @@
 import { motion } from 'framer-motion';
 import { FaReact, FaNodeJs, FaPython, FaDocker, FaGitAlt, FaBrain } from 'react-icons/fa';
-import { SiExpress, SiMysql, SiPostgresql, SiMongodb, SiKubernetes } from 'react-icons/si';
+import { SiExpress, SiMysql, SiPostgresql, SiMongodb, SiKubernetes, SiFigma, SiPrisma,SiFlutter, SiJavascript } from 'react-icons/si';
 
 const About = () => {
     const skills = [
+        { name: 'JavaScript', icon: <SiJavascript />, color: 'text-yellow-400' },
         { name: 'React', icon: <FaReact />, color: 'text-cyan-400' },
         { name: 'Express', icon: <SiExpress />, color: 'text-gray-200' },
         { name: 'Node.js', icon: <FaNodeJs />, color: 'text-green-500' },
         { name: 'Python', icon: <FaPython />, color: 'text-yellow-300' },
         { name: 'Machine Learning', icon: <FaBrain />, color: 'text-pink-500' },
-        { name: 'Docker', icon: <FaDocker />, color: 'text-blue-500' },
+        { name: 'flutter', icon: <SiFlutter />, color: 'text-blue-400' },
+        { name: 'Git', icon: <FaGitAlt />, color: 'text-orange-500' },
         { name: 'MySQL', icon: <SiMysql />, color: 'text-blue-400' },
         { name: 'PostgreSQL', icon: <SiPostgresql />, color: 'text-blue-300' },
         { name: 'MongoDB', icon: <SiMongodb />, color: 'text-green-400' },
-        { name: 'Git', icon: <FaGitAlt />, color: 'text-orange-500' },
+        { name: 'Prisma ORM', icon: <SiPrisma />, color: 'text-gray-400' },
+        { name: 'Docker', icon: <FaDocker />, color: 'text-blue-500' },
         { name: 'Kubernetes', icon: <SiKubernetes />, color: 'text-blue-600' },
-        { name: 'Prisma ORM', icon: <FaDatabase />, color: 'text-gray-400' },
-        { name: 'Figma', icon: <FaFigma />, color: 'text-pink-400' },
-        { name: 'flutter', icon: <FaFlutter />, color: 'text-blue-400' },
+        { name: 'Figma', icon: <SiFigma />, color: 'text-pink-400' },
+
     ];
 
     return (
