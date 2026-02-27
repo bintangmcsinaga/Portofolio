@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { FaReact, FaNodeJs, FaPython, FaDocker, FaGitAlt, FaBrain } from 'react-icons/fa';
-import { SiExpress, SiMysql, SiPostgresql, SiMongodb, SiKubernetes, SiFigma, SiPrisma,SiFlutter, SiJavascript } from 'react-icons/si';
+import { SiExpress, SiMysql, SiPostgresql, SiMongodb, SiKubernetes, SiFigma, SiPrisma,SiFlutter, SiJavascript, SiFirebase } from 'react-icons/si';
 
 const About = () => {
     const skills = [
@@ -17,6 +17,7 @@ const About = () => {
         { name: 'PostgreSQL', icon: <SiPostgresql />, color: 'text-blue-300' },
         { name: 'MongoDB', icon: <SiMongodb />, color: 'text-green-400' },
         { name: 'Prisma ORM', icon: <SiPrisma />, color: 'text-gray-400' },
+        { name: 'Firebase', icon: <SiFirebase />, color: 'text-orange-500' },
         { name: 'Docker', icon: <FaDocker />, color: 'text-blue-500' },
         { name: 'Kubernetes', icon: <SiKubernetes />, color: 'text-blue-600' },
         { name: 'Figma', icon: <SiFigma />, color: 'text-pink-400' },
