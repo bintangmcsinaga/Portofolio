@@ -17,7 +17,7 @@ const ProjectDetail = () => {
         return (
             <div className="min-h-screen flex flex-col items-center justify-center text-center px-4">
                 <h2 className="text-3xl font-bold text-white mb-4">Project Not Found</h2>
-                <Link to="/" className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2">
+                <Link to="/#projects" className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2">
                     <FaArrowLeft /> Back to Home
                 </Link>
             </div>
@@ -25,7 +25,14 @@ const ProjectDetail = () => {
     }
 
     const projectImages = project.images?.length ? project.images : [project.image];
+    const projectFeatures = project.features?.length ? project.features : [];
     const hasMultipleImages = projectImages.length > 1;
+    const role = project.role || 'Not specified';
+    const liveDemoUrl = project.liveDemo ?? project.link ?? '';
+    const viewCodeUrl = project.viewCode ?? '';
+    const hasValidUrl = (url) => typeof url === 'string' && url.trim() !== '' && url.trim() !== '#';
+    const hasLiveDemo = hasValidUrl(liveDemoUrl);
+    const hasViewCode = hasValidUrl(viewCodeUrl);
     const updateCurrentImageIndex = (index) => {
         setImageIndexes((prev) => ({
             ...prev,
@@ -119,9 +126,13 @@ const ProjectDetail = () => {
                             <div>
                                 <h2 className="text-2xl font-bold text-white mb-4">Features & Tech</h2>
                                 <ul className="list-disc list-inside text-gray-300 space-y-2 pt-2 border-t border-gray-800">
-                                    <li>Feature 1 description goes here.</li>
-                                    <li>Feature 2 description goes here.</li>
-                                    <li>Feature 3 description goes here.</li>
+                                    {projectFeatures.length > 0 ? (
+                                        projectFeatures.map((feature, index) => (
+                                            <li key={`${project.id}-feature-${index}`}>{feature}</li>
+                                        ))
+                                    ) : (
+                                        <li>No features available.</li>
+                                    )}
                                 </ul>
                             </div>
                         </div>
@@ -136,19 +147,25 @@ const ProjectDetail = () => {
                                     </div>
                                     <div>
                                         <span className="block text-gray-500 text-sm">Role</span>
-                                        <span className="text-gray-200">Full Stack Developer</span>
+                                        <span className="text-gray-200">{role}</span>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="flex flex-col gap-4">
-                                <a href={project.link} target="_blank" rel="noopener noreferrer" className="w-full py-3 bg-cyan-600 hover:bg-cyan-500 text-white font-medium rounded-lg text-center transition-colors flex items-center justify-center gap-2">
-                                    <FaExternalLinkAlt /> Live Demo
-                                </a>
-                                <a href="#" className="w-full py-3 bg-gray-800 hover:bg-gray-700 text-white font-medium rounded-lg text-center transition-colors flex items-center justify-center gap-2">
-                                    <FaGithub /> View Code
-                                </a>
-                            </div>
+                            {(hasLiveDemo || hasViewCode) && (
+                                <div className="flex flex-col gap-4">
+                                    {hasLiveDemo && (
+                                        <a href={liveDemoUrl} target="_blank" rel="noopener noreferrer" className="w-full py-3 bg-cyan-600 hover:bg-cyan-500 text-white font-medium rounded-lg text-center transition-colors flex items-center justify-center gap-2">
+                                            <FaExternalLinkAlt /> Live Demo
+                                        </a>
+                                    )}
+                                    {hasViewCode && (
+                                        <a href={viewCodeUrl} target="_blank" rel="noopener noreferrer" className="w-full py-3 bg-gray-800 hover:bg-gray-700 text-white font-medium rounded-lg text-center transition-colors flex items-center justify-center gap-2">
+                                            <FaGithub /> View Code
+                                        </a>
+                                    )}
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>
