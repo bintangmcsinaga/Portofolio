@@ -1,6 +1,8 @@
+const fromPublic = (path) => `${import.meta.env.BASE_URL}${path}`;
+
 export const projects = [
     {
-        id: 'Mobille Travel Platform',
+        id: 'Mobile Travel Platform',
         title: 'Go Toba',
         description: 'Go Toba is a Flutter-based mobile tourism application for the Lake Toba region that integrates login, personalised recommendations, hotel/ticket bookings, virtual account payments, transaction history and reviews, and the sharing of travel moments in a single Firebase-based platform with a bilingual interface and consistent UI.',
         fullDescription: "Go Toba is a Flutter-based mobile tourism application that centralises all Lake Toba travel needs in one experience: users can log in, find personalised recommendations (hotels, culinary experiences, destinations), book hotels/bus tickets/boat tickets, complete payments via virtual accounts, monitor transaction status in their history, leave reviews after transactions, and share travel moments via the 'Moments' feed. The entire workflow is supported by Firebase backend and a bilingual interface (Indonesian/English) with consistent UI design.",
@@ -20,16 +22,16 @@ export const projects = [
 
         ],
         images: [
-            '../../public/project/Go-Toba/1.png',
-            '../../public/project/Go-Toba/2.png',
-            '../../public/project/Go-Toba/3.png',
-            '../../public/project/Go-Toba/4.png',
-            '../../public/project/Go-Toba/5.png',
-            '../../public/project/Go-Toba/6.png',
-            '../../public/project/Go-Toba/7.png',
+            fromPublic('project/Go-Toba/1.png'),
+            fromPublic('project/Go-Toba/2.png'),
+            fromPublic('project/Go-Toba/3.png'),
+            fromPublic('project/Go-Toba/4.png'),
+            fromPublic('project/Go-Toba/5.png'),
+            fromPublic('project/Go-Toba/6.png'),
+            fromPublic('project/Go-Toba/7.png'),
         ],
-        image: '../../public/project/Go-Toba/logo.png',
-        date: 'Jan 2024',
+        image: fromPublic('project/Go-Toba/logo.png'),
+        date: 'January 2024',
         role: 'Mobile Developer',
         liveDemo: '',
         viewCode: 'https://github.com/bintangmcsinaga/Go-Toba',
