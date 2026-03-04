@@ -86,7 +86,7 @@ const ProjectDetail = () => {
 
                         <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-transparent opacity-80 pointer-events-none"></div>
                         <div className="absolute bottom-0 left-0 p-6 md:p-10">
-                            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">{project.title}</h1>
+                            <h1 className="text-4xl md:text-4xl font-bold text-white mb-4">{project.title}</h1>
                             <div className="flex flex-wrap gap-3">
                                 {project.tags.map((tag) => (
                                     <span key={tag} className="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-sm border border-cyan-500/30">
