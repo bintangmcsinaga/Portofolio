@@ -40,11 +40,13 @@ export const projects = [
         title: 'My Portfolio',
         description: 'My previous portfolio site focused on minimalism and typography.',
         fullDescription: 'The first iteration of my personal portfolio. It was designed with a heavy focus on typography and whitespace to create a clean, minimalist aesthetic. Built with React',
-        tags: ['React Vite', 'JavaScript'],
+        tags: ['React Vite', 'JavaScript', "CI/CD" , 'VPS'],
         features: [
             'Minimalist landing page with typography-first visual hierarchy.',
             'Custom section transitions and responsive spacing system.',
             'Lightweight architecture optimized for static hosting.',
+            'CI/CD pipeline for automated deployment to VPS hosting.',
+            'Manual content management via code updates and GitHub version control.'
         ],
         images: [
             fromPublic('project/Portofolio/1.png'),
