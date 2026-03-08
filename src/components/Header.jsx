@@ -50,15 +50,15 @@ const Header = () => {
                         </ul>
                     </nav>
 
-                    <div className="hidden md:flex items-center space-x-4">
-                        <a href="https://github.com/bintangmcsinaga" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-                            <FaGithub size={20} />
+                    <div className="flex items-center space-x-3 md:space-x-4">
+                        <a href="https://github.com/bintangmcsinaga" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
+                            <FaGithub size={18} className="md:h-5 md:w-5" />
                         </a>
-                        <a href="https://www.linkedin.com/in/bintang-sinaga-62b552229" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-                            <FaLinkedin size={20} />
+                        <a href="https://www.linkedin.com/in/bintang-sinaga-62b552229" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
+                            <FaLinkedin size={18} className="md:h-5 md:w-5" />
                         </a>
-                        <a href="mailto:bintangsinaga007@gmail.com" className="text-gray-400 hover:text-white transition-colors">
-                            <FaEnvelope size={20} />
+                        <a href="mailto:bintangsinaga007@gmail.com" className="text-gray-300 hover:text-white transition-colors">
+                            <FaEnvelope size={18} className="md:h-5 md:w-5" />
                         </a>
                     </div>
 
