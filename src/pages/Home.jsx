@@ -21,18 +21,22 @@ const Home = () => {
             <button
                 onClick={() => setIsTetrisActive((prev) => !prev)}
                 aria-label={isTetrisActive ? 'Tutup Tetris' : 'Buka Tetris'}
-                className="fixed bottom-6 right-6 z-[70] flex h-36 w-36 items-center justify-center rounded-full border border-cyan-300/60 bg-slate-950/90 shadow-[0_0_30px_rgba(34,211,238,0.35)] transition hover:scale-105 hover:bg-cyan-500/10"
+                className={`fixed z-[70] flex items-center justify-center rounded-full border border-cyan-300/60 bg-slate-950/90 shadow-[0_0_30px_rgba(34,211,238,0.35)] transition hover:scale-105 hover:bg-cyan-500/10 ${
+                    isTetrisActive
+                        ? 'right-3 top-3 h-12 w-12'
+                        : 'bottom-4 right-4 h-16 w-16 sm:bottom-6 sm:right-6 sm:h-20 sm:w-20'
+                }`}
             >
                 <img
                     src="/tetris_logo.png"
                     alt="Tetris trigger"
-                    className="h-20 w-20 object-contain"
+                    className={isTetrisActive ? 'h-7 w-7 object-contain' : 'h-10 w-10 object-contain sm:h-14 sm:w-14'}
                     draggable="false"
                 />
             </button>
 
             {isTetrisActive ? (
-                <section className="fixed inset-0 z-[60] flex items-center justify-center bg-slate-950/95 px-4 py-10">
+                <section className="fixed inset-0 z-[60] flex items-start justify-center overflow-y-auto bg-slate-950/95 px-2 pb-4 pt-2 sm:items-center sm:px-4 sm:py-10">
                     <TetrisGame />
                 </section>
             ) : (
