@@ -150,7 +150,7 @@ const getLineScore = (linesCleared) => {
     return scoreTable[linesCleared] ?? 0
 }
 
-const TetrisGame = () => {
+const TetrisGame = ({ onExit }) => {
     const [board, setBoard] = useState(createEmptyBoard)
     const [currentPiece, setCurrentPiece] = useState(() => getSpawnPiece())
     const [nextType, setNextType] = useState(() => getRandomType())
@@ -358,12 +358,20 @@ const TetrisGame = () => {
                     <h2 className="text-xl font-bold text-cyan-300 sm:text-2xl">Tetris Mode</h2>
                     <p className="text-xs text-slate-300 sm:text-sm">Kontrol keyboard: Arrow Left/Right/Down, Arrow Up untuk rotate.</p>
                 </div>
-                <button
-                    onClick={resetGame}
-                    className="rounded-lg border border-cyan-400/50 px-3 py-2 text-xs font-semibold text-cyan-200 transition hover:bg-cyan-400/10 sm:px-4 sm:text-sm"
-                >
-                    Restart
-                </button>
+                <div className="flex items-center gap-2">
+                    <button
+                        onClick={resetGame}
+                        className="rounded-lg border border-cyan-400/50 px-3 py-2 text-xs font-semibold text-cyan-200 transition hover:bg-cyan-400/10 sm:px-4 sm:text-sm"
+                    >
+                        Restart
+                    </button>
+                    <button
+                        onClick={onExit}
+                        className="rounded-lg border border-red-400/50 px-3 py-2 text-xs font-semibold text-red-200 transition hover:bg-red-500/10 sm:px-4 sm:text-sm"
+                    >
+                        Keluar
+                    </button>
+                </div>
             </div>
 
             <div className="grid gap-4 sm:gap-6 md:grid-cols-[minmax(0,1fr)_220px]">
