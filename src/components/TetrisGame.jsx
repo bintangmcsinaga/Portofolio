@@ -150,7 +150,7 @@ const getLineScore = (linesCleared) => {
     return scoreTable[linesCleared] ?? 0
 }
 
-const TetrisGame = ({ onExit }) => {
+const TetrisGame = ({ onExit = () => {} }) => {
     const [board, setBoard] = useState(createEmptyBoard)
     const [currentPiece, setCurrentPiece] = useState(() => getSpawnPiece())
     const [nextType, setNextType] = useState(() => getRandomType())
