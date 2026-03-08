@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import { FaArrowDown, FaArrowLeft, FaArrowRight, FaRedoAlt } from 'react-icons/fa'
 
 const BOARD_WIDTH = 10
 const BOARD_HEIGHT = 20
@@ -402,36 +403,36 @@ const TetrisGame = ({ onExit = () => {} }) => {
                             <button
                                 type="button"
                                 onClick={rotatePiece}
-                                className="flex h-10 w-40 items-center justify-center rounded-lg border border-cyan-400/40 bg-slate-800/80 text-[10px] font-bold text-cyan-200 active:scale-95"
+                                className="flex h-11 w-11 items-center justify-center rounded-lg border border-cyan-400/40 bg-slate-800/80 text-cyan-200 active:scale-95"
                                 aria-label="Rotate"
                             >
-                                ROT
+                                <FaRedoAlt size={16} />
                             </button>
                         </div>
                         <div className="mt-2 grid grid-cols-3 gap-2">
                             <button
                                 type="button"
                                 onClick={() => moveHorizontal(-1)}
-                                className="flex h-10 items-center justify-center rounded-lg border border-cyan-400/40 bg-slate-800/80 text-lg text-cyan-200 active:scale-95"
+                                className="flex h-11 items-center justify-center rounded-lg border border-cyan-400/40 bg-slate-800/80 text-cyan-200 active:scale-95"
                                 aria-label="Move left"
                             >
-                                L
+                                <FaArrowLeft size={16} />
                             </button>
                             <button
                                 type="button"
                                 onClick={moveDown}
-                                className="flex h-10 items-center justify-center rounded-lg border border-cyan-400/40 bg-slate-800/80 text-lg text-cyan-200 active:scale-95"
+                                className="flex h-11 items-center justify-center rounded-lg border border-cyan-400/40 bg-slate-800/80 text-cyan-200 active:scale-95"
                                 aria-label="Move down"
                             >
-                                D
+                                <FaArrowDown size={16} />
                             </button>
                             <button
                                 type="button"
                                 onClick={() => moveHorizontal(1)}
-                                className="flex h-10 items-center justify-center rounded-lg border border-cyan-400/40 bg-slate-800/80 text-lg text-cyan-200 active:scale-95"
+                                className="flex h-11 items-center justify-center rounded-lg border border-cyan-400/40 bg-slate-800/80 text-cyan-200 active:scale-95"
                                 aria-label="Move right"
                             >
-                                R
+                                <FaArrowRight size={16} />
                             </button>
                         </div>
                     </div>
