@@ -150,16 +150,33 @@ const getLineScore = (linesCleared) => {
     return scoreTable[linesCleared] ?? 0
 }
 
-const TetrisGame = () => {
+const TetrisGame = ({ onExit }) => {
     const [board, setBoard] = useState(createEmptyBoard)
     const [currentPiece, setCurrentPiece] = useState(() => getSpawnPiece())
     const [nextType, setNextType] = useState(() => getRandomType())
     const [score, setScore] = useState(0)
     const [lines, setLines] = useState(0)
     const [gameOver, setGameOver] = useState(false)
+    const [viewport, setViewport] = useState(() => ({
+        width: typeof window !== 'undefined' ? window.innerWidth : 1280,
+        height: typeof window !== 'undefined' ? window.innerHeight : 720,
+    }))
 
     const level = Math.floor(lines / 10) + 1
     const dropSpeed = Math.max(MIN_DROP_SPEED, BASE_DROP_SPEED - (level - 1) * 70)
+    const isMobileViewport = viewport.width < 768
+
+    const mobileBoardWidth = useMemo(() => {
+        if (!isMobileViewport) {
+            return null
+        }
+
+        const widthLimit = viewport.width - 56
+        const heightLimit = (viewport.height - 340) / 2
+        const preferredSize = Math.min(widthLimit, heightLimit, 320)
+
+        return Math.max(140, preferredSize)
+    }, [isMobileViewport, viewport.height, viewport.width])
 
     const resetGame = useCallback(() => {
         setBoard(createEmptyBoard())
@@ -168,6 +185,20 @@ const TetrisGame = () => {
         setScore(0)
         setLines(0)
         setGameOver(false)
+    }, [])
+
+    useEffect(() => {
+        const syncViewport = () => {
+            setViewport({
+                width: window.innerWidth,
+                height: window.innerHeight,
+            })
+        }
+
+        syncViewport()
+        window.addEventListener('resize', syncViewport)
+
+        return () => window.removeEventListener('resize', syncViewport)
     }, [])
 
     const moveHorizontal = useCallback(
@@ -321,22 +352,33 @@ const TetrisGame = () => {
     const nextColor = TETROMINOES[nextType]?.color ?? '#94a3b8'
 
     return (
-        <div className="w-full max-w-4xl rounded-2xl border border-cyan-400/30 bg-slate-950/90 p-5 shadow-[0_0_60px_rgba(34,211,238,0.25)] md:p-7">
-            <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
+        <div className="mx-auto w-full max-w-4xl max-h-[calc(100dvh-1rem)] overflow-y-auto rounded-2xl border border-cyan-400/30 bg-slate-950/90 p-3 shadow-[0_0_60px_rgba(34,211,238,0.25)] sm:max-h-none sm:overflow-visible sm:p-5 md:p-7">
+            <div className="mb-4 flex flex-wrap items-center justify-between gap-3 sm:mb-5">
                 <div>
-                    <h2 className="text-2xl font-bold text-cyan-300">Tetris Mode</h2>
-                    <p className="text-sm text-slate-300">Kontrol: Arrow Left/Right/Down, Arrow Up untuk rotate.</p>
+                    <h2 className="text-xl font-bold text-cyan-300 sm:text-2xl">Tetris Mode</h2>
+                    <p className="text-xs text-slate-300 sm:text-sm">Kontrol keyboard: Arrow Left/Right/Down, Arrow Up untuk rotate.</p>
                 </div>
-                <button
-                    onClick={resetGame}
-                    className="rounded-lg border border-cyan-400/50 px-4 py-2 text-sm font-semibold text-cyan-200 transition hover:bg-cyan-400/10"
-                >
-                    Restart
-                </button>
+                <div className="flex items-center gap-2">
+                    <button
+                        onClick={resetGame}
+                        className="rounded-lg border border-cyan-400/50 px-3 py-2 text-xs font-semibold text-cyan-200 transition hover:bg-cyan-400/10 sm:px-4 sm:text-sm"
+                    >
+                        Restart
+                    </button>
+                    <button
+                        onClick={onExit}
+                        className="rounded-lg border border-red-400/50 px-3 py-2 text-xs font-semibold text-red-200 transition hover:bg-red-500/10 sm:px-4 sm:text-sm"
+                    >
+                        Keluar
+                    </button>
+                </div>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-[minmax(0,1fr)_220px]">
-                <div className="mx-auto w-[min(84vw,360px)]">
+            <div className="grid gap-4 sm:gap-6 md:grid-cols-[minmax(0,1fr)_220px]">
+                <div
+                    className="mx-auto w-full max-w-[360px] md:w-[min(84vw,360px)]"
+                    style={isMobileViewport && mobileBoardWidth ? { width: `${mobileBoardWidth}px` } : undefined}
+                >
                     <div
                         className="grid overflow-hidden rounded-md border border-slate-700 bg-slate-900/80"
                         style={{ gridTemplateColumns: `repeat(${BOARD_WIDTH}, minmax(0, 1fr))` }}
@@ -353,37 +395,79 @@ const TetrisGame = () => {
                             )),
                         )}
                     </div>
+
+                    <div className="mt-3 rounded-xl border border-slate-700 bg-slate-900/60 p-2.5 md:hidden">
+                        <p className="mb-3 text-center text-xs text-slate-300">Kontrol sentuh</p>
+                        <div className="flex justify-center">
+                            <button
+                                type="button"
+                                onClick={rotatePiece}
+                                className="flex h-10 w-40 items-center justify-center rounded-lg border border-cyan-400/40 bg-slate-800/80 text-[10px] font-bold text-cyan-200 active:scale-95"
+                                aria-label="Rotate"
+                            >
+                                ROT
+                            </button>
+                        </div>
+                        <div className="mt-2 grid grid-cols-3 gap-2">
+                            <button
+                                type="button"
+                                onClick={() => moveHorizontal(-1)}
+                                className="flex h-10 items-center justify-center rounded-lg border border-cyan-400/40 bg-slate-800/80 text-lg text-cyan-200 active:scale-95"
+                                aria-label="Move left"
+                            >
+                                L
+                            </button>
+                            <button
+                                type="button"
+                                onClick={moveDown}
+                                className="flex h-10 items-center justify-center rounded-lg border border-cyan-400/40 bg-slate-800/80 text-lg text-cyan-200 active:scale-95"
+                                aria-label="Move down"
+                            >
+                                D
+                            </button>
+                            <button
+                                type="button"
+                                onClick={() => moveHorizontal(1)}
+                                className="flex h-10 items-center justify-center rounded-lg border border-cyan-400/40 bg-slate-800/80 text-lg text-cyan-200 active:scale-95"
+                                aria-label="Move right"
+                            >
+                                R
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
-                <div className="space-y-4 rounded-xl border border-slate-700 bg-slate-900/60 p-4">
-                    <div className="grid grid-cols-2 gap-3 text-sm">
-                        <div className="rounded-lg bg-slate-800/80 p-3">
+                <div className="space-y-3 rounded-xl border border-slate-700 bg-slate-900/60 p-2.5 sm:space-y-4 sm:p-4">
+                    <div className={`grid gap-2 text-xs sm:gap-3 sm:text-sm ${isMobileViewport ? 'grid-cols-3' : 'grid-cols-2'}`}>
+                        <div className="rounded-lg bg-slate-800/80 p-2.5 sm:p-3">
                             <p className="text-slate-400">Score</p>
-                            <p className="text-xl font-bold text-white">{score}</p>
+                            <p className="text-lg font-bold text-white sm:text-xl">{score}</p>
                         </div>
-                        <div className="rounded-lg bg-slate-800/80 p-3">
+                        <div className="rounded-lg bg-slate-800/80 p-2.5 sm:p-3">
                             <p className="text-slate-400">Level</p>
-                            <p className="text-xl font-bold text-white">{level}</p>
+                            <p className="text-lg font-bold text-white sm:text-xl">{level}</p>
                         </div>
-                        <div className="rounded-lg bg-slate-800/80 p-3">
+                        <div className="rounded-lg bg-slate-800/80 p-2.5 sm:p-3">
                             <p className="text-slate-400">Lines</p>
-                            <p className="text-xl font-bold text-white">{lines}</p>
+                            <p className="text-lg font-bold text-white sm:text-xl">{lines}</p>
                         </div>
-                        <div className="rounded-lg bg-slate-800/80 p-3">
-                            <p className="text-slate-400">Speed</p>
-                            <p className="text-xl font-bold text-white">{dropSpeed}ms</p>
-                        </div>
+                        {!isMobileViewport && (
+                            <div className="rounded-lg bg-slate-800/80 p-2.5 sm:p-3">
+                                <p className="text-slate-400">Speed</p>
+                                <p className="text-lg font-bold text-white sm:text-xl">{dropSpeed}ms</p>
+                            </div>
+                        )}
                     </div>
 
                     <div>
-                        <p className="mb-2 text-sm text-slate-400">Next Piece</p>
-                        <div className="inline-grid gap-1 rounded-lg border border-slate-700 bg-slate-900 p-3">
+                        <p className="mb-2 text-xs text-slate-400 sm:text-sm">Next Piece</p>
+                        <div className="inline-grid gap-1 rounded-lg border border-slate-700 bg-slate-900 p-2.5 sm:p-3">
                             {nextShape.map((row, rowIndex) => (
                                 <div key={`next-row-${rowIndex}`} className="flex gap-1">
                                     {row.map((cell, columnIndex) => (
                                         <div
                                             key={`next-cell-${rowIndex}-${columnIndex}`}
-                                            className="h-5 w-5 rounded-sm border border-slate-700"
+                                            className="h-4 w-4 rounded-sm border border-slate-700 sm:h-5 sm:w-5"
                                             style={{
                                                 backgroundColor: cell ? nextColor : 'rgba(15, 23, 42, 0.92)',
                                             }}
@@ -395,7 +479,7 @@ const TetrisGame = () => {
                     </div>
 
                     {gameOver && (
-                        <div className="rounded-lg border border-red-500/40 bg-red-500/10 p-3 text-sm text-red-200">
+                        <div className="rounded-lg border border-red-500/40 bg-red-500/10 p-3 text-xs text-red-200 sm:text-sm">
                             Game over. Tekan Enter atau klik Restart.
                         </div>
                     )}

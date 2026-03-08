@@ -46,13 +46,15 @@ export const projects = [
             'Custom section transitions and responsive spacing system.',
             'Lightweight architecture optimized for static hosting.',
             'CI/CD pipeline for automated deployment to VPS hosting.',
-            'Manual content management via code updates and GitHub version control.'
+            'Manual content management via code updates and GitHub version control.',
+            'Tetris mini-game Easter egg implemented with React state and CSS animations.',
         ],
         images: [
             fromPublic('project/Portofolio/1.png'),
             fromPublic('project/Portofolio/2.png'),
             fromPublic('project/Portofolio/3.png'),
             fromPublic('project/Portofolio/4.png'),
+            fromPublic('project/Portofolio/5.png'),
         
         ],
         image: fromPublic('project/Portofolio/logo.png'),
