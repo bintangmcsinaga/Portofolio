@@ -15,7 +15,7 @@ export const projects = [
             'Bus and ship ticket booking (route filtering, schedule selection, passenger count, payment options) using Cloud Firestore and intl for date/currency formatting.',
             'Payment tracking and transaction history with pending/paid status, countdown deadlines, cancellation handling, and post-booking review support in Cloud Firestore.',
             'Culinary and destination discovery with detailed content, rating display, and external map links via url_launcher.',
-            'Moments/social feed feature (caption + multi-image upload, like, share) using Firebase Storage, Cloud Firestore, image_picker, permission_handler, share_plus, http, and path_provider.',
+            'Moments/social feed feature (caption + multi-image upload, like, share) using Firebase Storage, Cloud Firestore, image_picker, permission_handler, share_plus, and path_provider.',
             'Profile management (edit profile data and photo upload) with Firebase Storage, Cloud Firestore, and local state via provider.',
             'App-wide state and UX foundation using provider (navigation/user/locale state), flutter_localizations + ARB (en, id), and UI packages like google_fonts, flutter_carousel_widget, flutter_rating_bar, and fluttertoast.'
         ],
