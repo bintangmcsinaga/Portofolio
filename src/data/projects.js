@@ -100,4 +100,36 @@ export const projects = [
         viewCode: 'https://github.com/bintangmcsinaga/sistem-rekomendasi-pariwisata-danau-toba',
         link: '#',
     },
+    {
+        id: 'Reminder App with Habit Detection',
+        title: 'Remind',
+        description: 'Remind is a Flutter app where users write free‑form activity notes that are analyzed to detect habits, predict the next occurrence, and send automatic reminders.',
+        fullDescription: 'Remind is a Flutter app where users write free‑form, long text notes about daily activities. The system analyzes those notes to detect activities, learn habits, predict the next occurrence, and deliver automatic reminders.',
+        tags: ['Flutter', 'Firebase', 'NLP-based'],
+        features: [
+            'Feature: Long text note input (single multi‑line field).',
+            'Feature: Create, edit, delete, and list notes.',
+            'Feature: Rule‑based NLP to detect activity and category from notes.',
+            'Feature: Notifications/reminders driven by predictions.',
+            'Feature: Dashboard with timeline, predicted habits, and upcoming reminders.',
+            'Feature: Habit analytics (frequency, streaks, activity calendar).'
+        ],
+        images: [
+            fromPublic('project/Remind/1.png'),
+            fromPublic('project/Remind/2.png'),
+            fromPublic('project/Remind/3.png'),
+            fromPublic('project/Remind/4.png'),
+            fromPublic('project/Remind/5.png'),
+            fromPublic('project/Remind/6.png'),
+            fromPublic('project/Remind/7.png'),
+            fromPublic('project/Remind/8.png'),
+
+        ],
+        image: fromPublic('project/Remind/logo.png'),
+        date: 'March 2026',
+        role: 'Mobile Developer',
+        liveDemo: '',
+        viewCode: 'https://github.com/bintangmcsinaga/remind',
+        link: '#',
+    },
 ];

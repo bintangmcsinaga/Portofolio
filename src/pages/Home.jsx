@@ -28,7 +28,7 @@ const Home = () => {
                     <img
                         src="/tetris_logo.png"
                         alt="Tetris trigger"
-                        className="h-10 w-10 object-contain sm:h-14 sm:w-14"
+                        className="h-10 w-10 object-contain sm:h-full sm:w-full rounded-full"
                         draggable="false"
                     />
                 </button>
