@@ -258,7 +258,13 @@ const Projects = () => {
                             </div>
 
                             <div className="mt-4 grid gap-4 lg:grid-cols-[minmax(0,1fr)_520px] lg:items-start">
-                                <div className="min-w-0 rounded-xl border border-gray-800 bg-gray-950/60 p-4">
+                                <motion.div
+                                    key={`calendar-${activeCalendar.year}`}
+                                    initial={{ opacity: 0, y: 12 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.9 }}
+                                    className="min-w-0 rounded-xl border border-gray-800 bg-gray-950/60 p-4"
+                                >
                                     <div className="flex items-center justify-between gap-3">
                                         <span className="text-xs uppercase tracking-wider text-gray-500">
                                             {activeCalendar.total} contributions
@@ -320,7 +326,7 @@ const Projects = () => {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </motion.div>
 
                                 <div className="min-w-0 rounded-xl border border-gray-800 bg-gray-950/60 p-4">
                                     <img

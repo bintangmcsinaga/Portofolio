@@ -9,6 +9,22 @@ const Hero = () => {
                 <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-pulse delay-700"></div>
             </div>
 
+            <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="absolute left-4 top-16 z-20 w-full min-w-[260px] max-w-xs sm:left-8 sm:top-20 sm:min-w-[520px] sm:max-w-sm"
+            >
+                <div className="rounded-2xl border border-gray-800 bg-gray-900/70 p-3 shadow-xl animate-float">
+                    <img
+                        src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical"
+                        alt="Random developer quote"
+                        loading="lazy"
+                        className="w-full"
+                    />
+                </div>
+            </motion.div>
+
             <div className="text-center z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
