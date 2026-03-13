@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import About from '../components/About'
@@ -9,6 +10,7 @@ import TetrisGame from '../components/TetrisGame'
 
 const Home = () => {
     const [isTetrisActive, setIsTetrisActive] = useState(false)
+    const { hash } = useLocation()
 
     useEffect(() => {
         document.body.style.overflow = isTetrisActive ? 'hidden' : ''
@@ -17,6 +19,45 @@ const Home = () => {
             document.body.style.overflow = ''
         }
     }, [isTetrisActive])
+
+    useEffect(() => {
+        if (isTetrisActive) return
+        if (!hash) return
+
+        let targetId = hash.replace('#', '').trim()
+        try {
+            targetId = decodeURIComponent(targetId).trim()
+        } catch {
+            // ignore malformed URI sequences
+        }
+        if (!targetId) return
+
+        const prefersReducedMotion =
+            typeof window !== 'undefined' &&
+            typeof window.matchMedia === 'function' &&
+            window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+        const behavior = prefersReducedMotion ? 'auto' : 'smooth'
+
+        let attempt = 0
+        let timerId
+        const maxAttempts = 10
+
+        const scrollToTarget = () => {
+            const element = document.getElementById(targetId)
+            if (element) {
+                element.scrollIntoView({ behavior, block: 'start' })
+                return
+            }
+
+            attempt += 1
+            if (attempt >= maxAttempts) return
+            timerId = setTimeout(scrollToTarget, 50)
+        }
+
+        timerId = setTimeout(scrollToTarget, 0)
+        return () => clearTimeout(timerId)
+    }, [hash, isTetrisActive])
 
     return (
         <>
