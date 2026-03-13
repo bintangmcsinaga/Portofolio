@@ -35,7 +35,7 @@ const Home = () => {
             )}
 
             {isTetrisActive ? (
-                <section className="fixed inset-0 z-[60] flex items-start justify-center overflow-y-auto bg-slate-950/95 px-2 pb-4 pt-2 sm:items-center sm:px-4 sm:py-10">
+                <section className="fixed inset-0 z-[60] overflow-hidden overscroll-none bg-slate-950/95">
                     <TetrisGame onExit={() => setIsTetrisActive(false)} />
                 </section>
             ) : (
