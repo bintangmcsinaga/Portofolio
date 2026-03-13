@@ -26,6 +26,7 @@ const ProjectDetail = () => {
 
     const projectImages = project.images?.length ? project.images : [project.image];
     const projectFeatures = project.features?.length ? project.features : [];
+    const projectTags = Array.isArray(project.tags) ? project.tags : [];
     const hasMultipleImages = projectImages.length > 1;
     const role = project.role || 'Not specified';
     const liveDemoUrl = project.liveDemo ?? project.link ?? '';
@@ -48,6 +49,32 @@ const ProjectDetail = () => {
         updateCurrentImageIndex(currentImageIndex === projectImages.length - 1 ? 0 : currentImageIndex + 1);
     };
 
+    const tagsContent = (
+        <div className="flex flex-wrap gap-3">
+            {projectTags.map((tag) => (
+                <span key={tag} className="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-sm border border-cyan-500/30">
+                    {tag}
+                </span>
+            ))}
+        </div>
+    );
+
+    const imageDots = hasMultipleImages ? (
+        <div className="flex items-center gap-2 mt-4">
+            {projectImages.map((_, index) => (
+                <button
+                    key={`dot-${index}`}
+                    type="button"
+                    onClick={() => updateCurrentImageIndex(index)}
+                    className={`h-2.5 rounded-full transition-all ${
+                        currentImageIndex === index ? 'w-7 bg-cyan-400' : 'w-2.5 bg-white/40 hover:bg-white/60'
+                    }`}
+                    aria-label={`Go to image ${index + 1}`}
+                />
+            ))}
+        </div>
+    ) : null;
+
     return (
         <div className="pt-10 pb-20 min-h-screen">
             <div className="container mx-auto px-4 max-w-5xl">
@@ -56,61 +83,47 @@ const ProjectDetail = () => {
                 </Link>
 
                 <div>
-                    <div className="relative rounded-2xl overflow-hidden mb-12 border border-gray-800 shadow-2xl bg-gray-950">
-                        <img
-                            src={projectImages[currentImageIndex]}
-                            alt={`${project.title} - Slide ${currentImageIndex + 1}`}
-                            className="block mx-auto w-auto max-w-full h-auto max-h-[75vh]"
-                        />
+                    <div className="mb-12">
+                        <div className="relative rounded-2xl overflow-hidden border border-gray-800 shadow-2xl bg-gray-950">
+                            <img
+                                src={projectImages[currentImageIndex]}
+                                alt={`${project.title} - Slide ${currentImageIndex + 1}`}
+                                className="block mx-auto w-auto max-w-full h-auto max-h-[75vh]"
+                            />
 
-                        {hasMultipleImages && (
-                            <>
-                                <button
-                                    type="button"
-                                    onClick={showPrevImage}
-                                    className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/45 text-white hover:bg-cyan-500 transition-colors flex items-center justify-center"
-                                    aria-label="Previous project image"
-                                >
-                                    <FaChevronLeft />
-                                </button>
-                                <button
-                                    type="button"
-                                    onClick={showNextImage}
-                                    className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/45 text-white hover:bg-cyan-500 transition-colors flex items-center justify-center"
-                                    aria-label="Next project image"
-                                >
-                                    <FaChevronRight />
-                                </button>
-                            </>
-                        )}
-
-                        <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-transparent opacity-80 pointer-events-none"></div>
-                        <div className="absolute bottom-0 left-0 p-6 md:p-10">
-                            <h1 className="text-4xl md:text-4xl font-bold text-white mb-4">{project.title}</h1>
-                            <div className="flex flex-wrap gap-3">
-                                {project.tags.map((tag) => (
-                                    <span key={tag} className="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-sm border border-cyan-500/30">
-                                        {tag}
-                                    </span>
-                                ))}
-                            </div>
                             {hasMultipleImages && (
-                                <div className="flex items-center gap-2 mt-4">
-                                    {projectImages.map((_, index) => (
-                                        <button
-                                            key={`dot-${index}`}
-                                            type="button"
-                                            onClick={() => updateCurrentImageIndex(index)}
-                                            className={`h-2.5 rounded-full transition-all ${
-                                                currentImageIndex === index
-                                                    ? 'w-7 bg-cyan-400'
-                                                    : 'w-2.5 bg-white/40 hover:bg-white/60'
-                                            }`}
-                                            aria-label={`Go to image ${index + 1}`}
-                                        />
-                                    ))}
-                                </div>
+                                <>
+                                    <button
+                                        type="button"
+                                        onClick={showPrevImage}
+                                        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/45 text-white hover:bg-cyan-500 transition-colors flex items-center justify-center"
+                                        aria-label="Previous project image"
+                                    >
+                                        <FaChevronLeft />
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={showNextImage}
+                                        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/45 text-white hover:bg-cyan-500 transition-colors flex items-center justify-center"
+                                        aria-label="Next project image"
+                                    >
+                                        <FaChevronRight />
+                                    </button>
+                                </>
                             )}
+
+                            <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-transparent opacity-80 pointer-events-none"></div>
+                            <div className="hidden md:block absolute bottom-0 left-0 p-6 md:p-10">
+                                <h1 className="text-4xl md:text-4xl font-bold text-white mb-4">{project.title}</h1>
+                                {tagsContent}
+                                {imageDots}
+                            </div>
+                        </div>
+
+                        <div className="md:hidden mt-6">
+                            <h1 className="text-3xl font-bold text-white">{project.title}</h1>
+                            <div className="mt-4">{tagsContent}</div>
+                            {imageDots}
                         </div>
                     </div>
 
