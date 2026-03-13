@@ -49,7 +49,7 @@ const ProjectDetail = () => {
     };
 
     return (
-        <div className="pt-24 pb-20 min-h-screen">
+        <div className="pt-10 pb-20 min-h-screen">
             <div className="container mx-auto px-4 max-w-5xl">
                 <Link to="/" className="inline-flex items-center text-gray-400 hover:text-cyan-400 mb-8 transition-colors">
                     <FaArrowLeft className="mr-2" /> Back to Home

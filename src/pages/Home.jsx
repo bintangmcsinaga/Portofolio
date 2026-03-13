@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Header from '../components/Header'
 import Hero from '../components/Hero'
 import About from '../components/About'
 import WorkExperience from '../components/WorkExperience'
@@ -19,6 +20,8 @@ const Home = () => {
 
     return (
         <>
+            {!isTetrisActive && <Header />}
+
             {!isTetrisActive && (
                 <button
                     onClick={() => setIsTetrisActive(true)}
