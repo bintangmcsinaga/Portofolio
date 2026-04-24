@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { FaReact, FaNodeJs, FaPython, FaDocker, FaGitAlt, FaBrain } from 'react-icons/fa';
-import { SiExpress, SiMysql, SiPostgresql, SiMongodb, SiKubernetes, SiFigma, SiPrisma,SiFlutter, SiJavascript, SiFirebase } from 'react-icons/si';
+import { SiExpress, SiMysql, SiPostgresql, SiMongodb, SiKubernetes, SiFigma, SiPrisma, SiFlutter, SiJavascript, SiFirebase } from 'react-icons/si';
 
 const About = () => {
     const skills = [
@@ -39,14 +39,6 @@ const About = () => {
                     </div>
                     <h2 className="mb-8 text-3xl font-bold text-white md:text-4xl">Building backend systems that stay clear, scalable, and dependable.</h2>
 
-                    <div className="mb-12 rounded-[28px] border border-white/10 bg-[#24124f]/78 p-8 shadow-[0_24px_60px_rgba(10,6,26,0.35)] backdrop-blur-sm">
-                        <p className="mb-6 text-lg leading-relaxed text-[#E6DCF7]">
-                            I am a backend-focused developer with experience in building information systems and SaaS applications that are reliable, scalable, and maintainable. I enjoy designing system architectures, developing robust APIs, and translating business requirements into efficient backend solutions that support real-world operations.
-                        </p>
-                        <p className="text-lg leading-relaxed text-[#D7C7EE]">
-                            My primary tech stack includes Node.js, Express, RESTful APIs, JWT authentication, and MySQL/PostgreSQL with Prisma ORM, as well as MongoDB for certain use cases. I also have hands-on experience in machine learning and deep learning, particularly in training and fine-tuning transformer-based models such as RoBERTa for natural language processing tasks. On the DevOps side, I am familiar with Docker, basic CI/CD pipelines, and deployment on Linux-based servers, including environment configuration, monitoring, and performance optimization to support production-ready systems.
-                        </p>
-                    </div>
 
                     <h3 className="mb-8 text-2xl font-bold text-white">Tech Stack</h3>
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">

@@ -185,74 +185,91 @@ const Projects = () => {
                     </div>
                 </motion.div>
 
-                <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+                <div className="grid grid-cols-1 gap-7 md:grid-cols-2">
                     {projects.map((project, index) => (
                         <motion.div
                             key={project.id}
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            transition={{ duration: 0.6, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
                             viewport={{ once: true }}
-                            whileHover={{ y: -10 }}
-                            className={`group overflow-hidden rounded-[30px] border border-white/10 bg-[#24124f]/82 shadow-[0_25px_60px_rgba(10,6,26,0.35)] transition-all duration-300 hover:border-[#FF653F]/35 hover:shadow-[0_32px_80px_rgba(10,6,26,0.45)] ${index === 0 ? 'lg:col-span-2' : ''}`}
+                            whileHover={{ y: -8 }}
+                            className="group relative overflow-hidden rounded-[28px] border border-white/[0.08] bg-gradient-to-b from-[#1f1152]/90 to-[#170d3a]/95 shadow-[0_8px_32px_rgba(10,6,26,0.3)] backdrop-blur-md transition-all duration-500 hover:border-[#FF653F]/30 hover:shadow-[0_20px_60px_rgba(255,101,63,0.12),0_8px_24px_rgba(10,6,26,0.4)]"
                         >
-                            <div className={`grid h-full ${index === 0 ? 'lg:grid-cols-[minmax(0,0.95fr)_minmax(320px,1.05fr)]' : ''}`}>
-                                <div className={`flex flex-col ${index === 0 ? 'justify-between p-8' : 'p-6'}`}>
-                                    <div>
-                                        <div className="mb-4 flex items-center justify-between gap-3">
-                                            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.24em] text-[#FFB39F]">
-                                                {project.date || 'Recent Work'}
-                                            </span>
-                                            <span className="text-sm font-medium text-[#A996C7]">0{index + 1}</span>
-                                        </div>
-                                        <h3 className="mb-3 text-2xl font-bold leading-tight text-white transition-colors group-hover:text-[#FFD7CA]">
-                                            {project.title}
-                                        </h3>
-                                        <p className="mb-6 text-sm leading-7 text-[#D7C7EE] md:text-base">
-                                            {project.description}
-                                        </p>
-                                    </div>
+                            {/* Glow effect on hover */}
+                            <div className="pointer-events-none absolute -inset-px rounded-[28px] opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{ background: 'radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 30%), rgba(255,101,63,0.06), transparent 40%)' }} />
 
-                                    <div>
-                                        <div className="mb-6 flex flex-wrap gap-2">
-                                            {project.tags.map((tag) => (
-                                                <span key={tag} className="rounded-full border border-white/10 bg-[#452E5A]/30 px-3 py-1 text-xs font-medium text-[#F3E9FF]">
-                                                    {tag}
-                                                </span>
-                                            ))}
-                                        </div>
+                            {/* Image area */}
+                            <div className="relative h-52 overflow-hidden sm:h-60">
+                                <img
+                                    src={project.image}
+                                    alt={project.title}
+                                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#170d3a] via-[#170d3a]/60 to-transparent" />
 
-                                        <Link
-                                            to={`/project/${project.id}`}
-                                            className="inline-flex items-center gap-3 rounded-full bg-[#FF653F] px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-[#ff7a59]"
-                                        >
-                                            Explore Project
-                                            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/15 text-base">
-                                                &gt;
-                                            </span>
-                                        </Link>
-                                    </div>
+                                {/* Floating index badge */}
+                                <div className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-[#1E104E]/70 text-sm font-bold text-[#FF653F] backdrop-blur-md">
+                                    0{index + 1}
                                 </div>
 
-                                <div className={`relative overflow-hidden ${index === 0 ? 'min-h-[320px] lg:min-h-full' : 'h-56'}`}>
-                                    <img
-                                        src={project.image}
-                                        alt={project.title}
-                                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                    />
-                                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(20,10,54,0.02),rgba(20,10,54,0.22)_45%,rgba(20,10,54,0.88)_100%)]" />
-                                    <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5">
-                                        <div>
-                                            <p className="mb-1 text-[11px] uppercase tracking-[0.26em] text-[#FFD7CA]">Case study</p>
-                                            <p className="text-sm text-[#F7F1FF]">Structured delivery with strong technical ownership.</p>
-                                        </div>
-                                        <Link
-                                            to={`/project/${project.id}`}
-                                            className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:border-[#FF653F]/45 hover:bg-[#FF653F]/18"
+                                {/* Date badge */}
+                                <div className="absolute left-4 top-4 rounded-full border border-white/10 bg-[#1E104E]/70 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#FFB39F] backdrop-blur-md">
+                                    {project.date || 'Recent Work'}
+                                </div>
+
+                                {/* Role overlay at bottom of image */}
+                                <div className="absolute inset-x-0 bottom-0 px-5 pb-4">
+                                    <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-[#FFD7CA]/80">{project.role}</span>
+                                </div>
+                            </div>
+
+                            {/* Content area */}
+                            <div className="relative flex flex-col gap-4 p-5 pt-4 sm:p-6 sm:pt-5">
+                                <div>
+                                    <h3 className="mb-2 text-xl font-bold leading-snug text-white transition-colors duration-300 group-hover:text-[#FFD7CA] sm:text-2xl">
+                                        {project.title}
+                                    </h3>
+                                    <p className="line-clamp-3 text-[13px] leading-relaxed text-[#C4B5DE] sm:text-sm sm:leading-7">
+                                        {project.description}
+                                    </p>
+                                </div>
+
+                                {/* Tags */}
+                                <div className="flex flex-wrap gap-1.5">
+                                    {project.tags.map((tag) => (
+                                        <span
+                                            key={tag}
+                                            className="rounded-lg border border-white/[0.06] bg-[#2a165f]/60 px-2.5 py-1 text-[11px] font-medium text-[#E6DCF7] transition-colors duration-200 group-hover:border-[#FF653F]/15 group-hover:bg-[#FF653F]/[0.06]"
                                         >
-                                            View
-                                        </Link>
-                                    </div>
+                                            {tag}
+                                        </span>
+                                    ))}
+                                </div>
+
+                                {/* Divider */}
+                                <div className="h-px bg-gradient-to-r from-[#FF653F]/20 via-white/[0.06] to-transparent" />
+
+                                {/* CTA */}
+                                <div className="flex items-center justify-between">
+                                    <Link
+                                        to={`/project/${project.id}`}
+                                        className="group/btn inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-[#FF653F] to-[#e5502d] px-5 py-2.5 text-[13px] font-semibold text-white shadow-[0_4px_16px_rgba(255,101,63,0.3)] transition-all duration-300 hover:shadow-[0_6px_24px_rgba(255,101,63,0.45)] hover:brightness-110"
+                                    >
+                                        Explore Project
+                                        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20 text-xs transition-transform duration-300 group-hover/btn:translate-x-0.5">
+                                            →
+                                        </span>
+                                    </Link>
+                                    <Link
+                                        to={`/project/${project.id}`}
+                                        className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-[#E6DCF7] transition-all duration-200 hover:border-[#FF653F]/40 hover:bg-[#FF653F]/10 hover:text-white"
+                                        aria-label={`View ${project.title} details`}
+                                    >
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-4 w-4">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                                        </svg>
+                                    </Link>
                                 </div>
                             </div>
                         </motion.div>

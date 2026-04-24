@@ -16,51 +16,51 @@ const Contact = () => {
                             <span className="section-kicker">Contact</span>
                         </div>
                         <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">Let&apos;s build something focused, useful, and technically solid.</h2>
-                        <p className="text-[#D7C7EE]">Have a project in mind? Let's work together.</p>
+                        <p className="text-[#888888]">Have a project in mind? Let's work together.</p>
                     </div>
 
-                    <div className="rounded-[30px] border border-white/10 bg-[#24124f]/82 p-8 shadow-[0_28px_70px_rgba(10,6,26,0.4)] backdrop-blur-sm">
+                    <div className="rounded-2xl border border-white/[0.06] bg-[#141414] p-8">
                         <form className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
-                                    <label className="mb-2 block text-sm font-medium text-[#FFB39F]">Name</label>
+                                    <label className="mb-2 block text-sm font-medium text-[#FF653F]">Name</label>
                                     <input
                                         type="text"
-                                        className="w-full rounded-xl border border-white/10 bg-[#1E104E] px-4 py-3 text-white transition-colors placeholder:text-[#A996C7] focus:border-[#FF653F] focus:outline-none"
+                                        className="w-full rounded-xl border border-white/[0.06] bg-[#0d0d0d] px-4 py-3 text-white transition-colors placeholder:text-[#555555] focus:border-[#FF653F] focus:outline-none"
                                         placeholder="John Doe"
                                     />
                                 </div>
                                 <div>
-                                    <label className="mb-2 block text-sm font-medium text-[#FFB39F]">Email</label>
+                                    <label className="mb-2 block text-sm font-medium text-[#FF653F]">Email</label>
                                     <input
                                         type="email"
-                                        className="w-full rounded-xl border border-white/10 bg-[#1E104E] px-4 py-3 text-white transition-colors placeholder:text-[#A996C7] focus:border-[#FF653F] focus:outline-none"
+                                        className="w-full rounded-xl border border-white/[0.06] bg-[#0d0d0d] px-4 py-3 text-white transition-colors placeholder:text-[#555555] focus:border-[#FF653F] focus:outline-none"
                                         placeholder="john@example.com"
                                     />
                                 </div>
                             </div>
 
                             <div>
-                                <label className="mb-2 block text-sm font-medium text-[#FFB39F]">Subject</label>
+                                <label className="mb-2 block text-sm font-medium text-[#FF653F]">Subject</label>
                                 <input
                                     type="text"
-                                    className="w-full rounded-xl border border-white/10 bg-[#1E104E] px-4 py-3 text-white transition-colors placeholder:text-[#A996C7] focus:border-[#FF653F] focus:outline-none"
+                                    className="w-full rounded-xl border border-white/[0.06] bg-[#0d0d0d] px-4 py-3 text-white transition-colors placeholder:text-[#555555] focus:border-[#FF653F] focus:outline-none"
                                     placeholder="Project Proposal"
                                 />
                             </div>
 
                             <div>
-                                <label className="mb-2 block text-sm font-medium text-[#FFB39F]">Message</label>
+                                <label className="mb-2 block text-sm font-medium text-[#FF653F]">Message</label>
                                 <textarea
                                     rows="4"
-                                    className="w-full rounded-xl border border-white/10 bg-[#1E104E] px-4 py-3 text-white transition-colors placeholder:text-[#A996C7] focus:border-[#FF653F] focus:outline-none"
+                                    className="w-full rounded-xl border border-white/[0.06] bg-[#0d0d0d] px-4 py-3 text-white transition-colors placeholder:text-[#555555] focus:border-[#FF653F] focus:outline-none"
                                     placeholder="Your message here..."
                                 ></textarea>
                             </div>
 
                             <button
                                 type="submit"
-                                className="block w-full rounded-xl bg-[#FF653F] py-4 text-center font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#ff7a59] hover:shadow-[0_18px_40px_rgba(255,101,63,0.28)]"
+                                className="block w-full rounded-xl bg-[#FF653F] py-4 text-center font-bold text-white transition-all duration-300 hover:brightness-110"
                             >
                                 Send Message
                             </button>

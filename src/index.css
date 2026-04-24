@@ -8,11 +8,11 @@
   font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  --color-primary: #1e104e;
-  --color-secondary: #452e5a;
+  --color-primary: #0d0d0d;
+  --color-secondary: #1a1a1a;
   --color-accent: #ff653f;
-  --color-text: #f6f0ff;
-  --color-muted: #d7c7ee;
+  --color-text: #e5e5e5;
+  --color-muted: #888888;
 
   color-scheme: dark;
   color: var(--color-text);
@@ -28,11 +28,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background:
-    radial-gradient(circle at top left, rgba(255, 101, 63, 0.2), transparent 28%),
-    radial-gradient(circle at top right, rgba(69, 46, 90, 0.42), transparent 34%),
-    linear-gradient(180deg, #140a36 0%, #1e104e 46%, #160c3b 100%);
-  background-attachment: fixed;
+  background: #0d0d0d;
   @apply text-white overflow-x-hidden;
 }
 
@@ -55,21 +51,19 @@ p {
 
 @layer components {
   .section-shell {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 32px;
-    background: rgba(36, 18, 79, 0.78);
-    box-shadow: 0 28px 70px rgba(10, 6, 26, 0.35);
-    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    background: #141414;
   }
 
   .section-kicker {
     display: inline-flex;
     align-items: center;
-    border: 1px solid rgba(255, 101, 63, 0.3);
+    border: 1px solid rgba(255, 101, 63, 0.25);
     border-radius: 9999px;
-    background: rgba(255, 101, 63, 0.1);
+    background: rgba(255, 101, 63, 0.08);
     padding: 0.5rem 1rem;
-    color: #ffd4c8;
+    color: #ff8a6a;
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.28em;
@@ -77,15 +71,15 @@ p {
   }
 
   .field-surface {
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 0.75rem;
-    background: #1e104e;
+    background: #111111;
     color: #ffffff;
     transition: border-color 180ms ease;
   }
 
   .field-surface::placeholder {
-    color: #a996c7;
+    color: #666666;
   }
 
   .field-surface:focus {
@@ -96,15 +90,15 @@ p {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1b103f;
+  background: #0d0d0d;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #452e5a 0%, #ff653f 100%);
+  background: #333333;
   border-radius: 9999px;
 }
 

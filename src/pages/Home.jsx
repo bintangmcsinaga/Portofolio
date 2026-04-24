@@ -62,45 +62,47 @@ const Home = () => {
 
     return (
         <>
-            {!isTetrisActive && <Header />}
+            <Header />
 
-            {!isTetrisActive && (
-                <div className="fixed bottom-4 right-4 z-[70] flex flex-col gap-3 rounded-[28px] border border-white/10 bg-[#1A0F43]/72 p-3 shadow-[0_24px_55px_rgba(10,6,26,0.45)] backdrop-blur-xl sm:bottom-6 sm:right-6">
-                    <Link
-                        to="/model"
-                        aria-label="Buka 3D Model"
-                        className="group flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-[#FF653F] transition hover:scale-105 hover:border-[#FF653F]/45 hover:bg-[#452E5A] sm:h-16 sm:w-16"
-                    >
-                        <FaCube size={26} className="transition-transform group-hover:rotate-12 sm:h-8 sm:w-8" />
-                    </Link>
-                    <button
-                        onClick={() => setIsTetrisActive(true)}
-                        aria-label="Buka Tetris"
-                        className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5 transition hover:scale-105 hover:border-[#FF653F]/45 hover:bg-[#452E5A] sm:h-16 sm:w-16"
-                    >
-                        <img
-                            src="/tetris_logo.png"
-                            alt="Tetris trigger"
-                            className="h-9 w-9 rounded-full object-contain sm:h-10 sm:w-10"
-                            draggable="false"
-                        />
-                    </button>
-                </div>
-            )}
+            <div className="ml-[260px]">
+                {!isTetrisActive && (
+                    <div className="fixed bottom-4 right-4 z-[70] flex flex-col gap-3 rounded-[28px] border border-white/10 bg-[#1A0F43]/72 p-3 shadow-[0_24px_55px_rgba(10,6,26,0.45)] backdrop-blur-xl sm:bottom-6 sm:right-6">
+                        <Link
+                            to="/model"
+                            aria-label="Buka 3D Model"
+                            className="group flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-[#FF653F] transition hover:scale-105 hover:border-[#FF653F]/45 hover:bg-[#452E5A] sm:h-16 sm:w-16"
+                        >
+                            <FaCube size={26} className="transition-transform group-hover:rotate-12 sm:h-8 sm:w-8" />
+                        </Link>
+                        <button
+                            onClick={() => setIsTetrisActive(true)}
+                            aria-label="Buka Tetris"
+                            className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5 transition hover:scale-105 hover:border-[#FF653F]/45 hover:bg-[#452E5A] sm:h-16 sm:w-16"
+                        >
+                            <img
+                                src="/tetris_logo.png"
+                                alt="Tetris trigger"
+                                className="h-9 w-9 rounded-full object-contain sm:h-10 sm:w-10"
+                                draggable="false"
+                            />
+                        </button>
+                    </div>
+                )}
 
-            {isTetrisActive ? (
-                <section className="fixed inset-0 z-[60] overflow-hidden overscroll-none bg-[#1E104E]/95">
-                    <TetrisGame onExit={() => setIsTetrisActive(false)} />
-                </section>
-            ) : (
-                <>
-                    <Hero />
-                    <About />
-                    <WorkExperience />
-                    <Projects />
-                    <Contact />
-                </>
-            )}
+                {isTetrisActive ? (
+                    <section className="fixed inset-0 z-[60] overflow-hidden overscroll-none bg-[#1E104E]/95">
+                        <TetrisGame onExit={() => setIsTetrisActive(false)} />
+                    </section>
+                ) : (
+                    <>
+                        <Hero />
+                        <About />
+                        <WorkExperience />
+                        <Projects />
+                        <Contact />
+                    </>
+                )}
+            </div>
         </>
     )
 }
