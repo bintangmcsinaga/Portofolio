@@ -12,52 +12,55 @@ const Contact = () => {
                     className="max-w-4xl mx-auto"
                 >
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Get In <span className="text-cyan-400">Touch</span></h2>
-                        <p className="text-gray-400">Have a project in mind? Let's work together.</p>
+                        <div className="mb-5 flex justify-center">
+                            <span className="section-kicker">Contact</span>
+                        </div>
+                        <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">Let&apos;s build something focused, useful, and technically solid.</h2>
+                        <p className="text-[#888888]">Have a project in mind? Let's work together.</p>
                     </div>
 
-                    <div className="bg-gray-900 rounded-2xl p-8 border border-gray-800 shadow-2xl">
+                    <div className="rounded-2xl border border-white/[0.06] bg-[#141414] p-8">
                         <form className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-400 mb-2">Name</label>
+                                    <label className="mb-2 block text-sm font-medium text-[#FF653F]">Name</label>
                                     <input
                                         type="text"
-                                        className="w-full px-4 py-3 bg-gray-950 border border-gray-800 rounded-lg focus:outline-none focus:border-cyan-500 text-white transition-colors"
+                                        className="w-full rounded-xl border border-white/[0.06] bg-[#0d0d0d] px-4 py-3 text-white transition-colors placeholder:text-[#555555] focus:border-[#FF653F] focus:outline-none"
                                         placeholder="John Doe"
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-400 mb-2">Email</label>
+                                    <label className="mb-2 block text-sm font-medium text-[#FF653F]">Email</label>
                                     <input
                                         type="email"
-                                        className="w-full px-4 py-3 bg-gray-950 border border-gray-800 rounded-lg focus:outline-none focus:border-cyan-500 text-white transition-colors"
+                                        className="w-full rounded-xl border border-white/[0.06] bg-[#0d0d0d] px-4 py-3 text-white transition-colors placeholder:text-[#555555] focus:border-[#FF653F] focus:outline-none"
                                         placeholder="john@example.com"
                                     />
                                 </div>
                             </div>
 
                             <div>
-                                <label className="block text-sm font-medium text-gray-400 mb-2">Subject</label>
+                                <label className="mb-2 block text-sm font-medium text-[#FF653F]">Subject</label>
                                 <input
                                     type="text"
-                                    className="w-full px-4 py-3 bg-gray-950 border border-gray-800 rounded-lg focus:outline-none focus:border-cyan-500 text-white transition-colors"
+                                    className="w-full rounded-xl border border-white/[0.06] bg-[#0d0d0d] px-4 py-3 text-white transition-colors placeholder:text-[#555555] focus:border-[#FF653F] focus:outline-none"
                                     placeholder="Project Proposal"
                                 />
                             </div>
 
                             <div>
-                                <label className="block text-sm font-medium text-gray-400 mb-2">Message</label>
+                                <label className="mb-2 block text-sm font-medium text-[#FF653F]">Message</label>
                                 <textarea
                                     rows="4"
-                                    className="w-full px-4 py-3 bg-gray-950 border border-gray-800 rounded-lg focus:outline-none focus:border-cyan-500 text-white transition-colors"
+                                    className="w-full rounded-xl border border-white/[0.06] bg-[#0d0d0d] px-4 py-3 text-white transition-colors placeholder:text-[#555555] focus:border-[#FF653F] focus:outline-none"
                                     placeholder="Your message here..."
                                 ></textarea>
                             </div>
 
                             <button
                                 type="submit"
-                                className="w-full py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg font-bold text-white hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 transform hover:-translate-y-1 block text-center"
+                                className="block w-full rounded-xl bg-[#FF653F] py-4 text-center font-bold text-white transition-all duration-300 hover:brightness-110"
                             >
                                 Send Message
                             </button>

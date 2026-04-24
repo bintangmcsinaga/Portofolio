@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { FaReact, FaNodeJs, FaPython, FaDocker, FaGitAlt, FaBrain } from 'react-icons/fa';
-import { SiExpress, SiMysql, SiPostgresql, SiMongodb, SiKubernetes, SiFigma, SiPrisma,SiFlutter, SiJavascript, SiFirebase } from 'react-icons/si';
+import { SiExpress, SiMysql, SiPostgresql, SiMongodb, SiKubernetes, SiFigma, SiPrisma, SiFlutter, SiJavascript, SiFirebase } from 'react-icons/si';
 
 const About = () => {
     const skills = [
@@ -21,7 +21,6 @@ const About = () => {
         { name: 'Docker', icon: <FaDocker />, color: 'text-blue-500' },
         { name: 'Kubernetes', icon: <SiKubernetes />, color: 'text-blue-600' },
         { name: 'Figma', icon: <SiFigma />, color: 'text-pink-400' },
-
     ];
 
     return (
@@ -34,18 +33,12 @@ const About = () => {
                     viewport={{ once: true }}
                     className="max-w-4xl mx-auto text-center"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white"><span className="text-cyan-400">About</span> Me</h2>
-
-                    <div className="bg-gray-900/50 p-8 rounded-2xl backdrop-blur-sm border border-gray-800 shadow-xl mb-12">
-                        <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                            I am a backend-focused developer with experience in building information systems and SaaS applications that are reliable, scalable, and maintainable. I enjoy designing system architectures, developing robust APIs, and translating business requirements into efficient backend solutions that support real-world operations.
-                        </p>
-                        <p className="text-gray-300 text-lg leading-relaxed">
-                            My primary tech stack includes Node.js, Express, RESTful APIs, JWT authentication, and MySQL/PostgreSQL with Prisma ORM, as well as MongoDB for certain use cases. I also have hands-on experience in machine learning and deep learning, particularly in training and fine-tuning transformer-based models such as RoBERTa for natural language processing tasks. On the DevOps side, I am familiar with Docker, basic CI/CD pipelines, and deployment on Linux-based servers, including environment configuration, monitoring, and performance optimization to support production-ready systems.
-                        </p>
+                    <div className="mb-5 flex justify-center">
+                        <span className="section-kicker">About</span>
                     </div>
+                    <h2 className="mb-8 text-3xl font-bold text-white md:text-4xl">Building backend systems that stay clear, scalable, and dependable.</h2>
 
-                    <h3 className="text-2xl font-bold text-white mb-8">Tech Stack</h3>
+                    <h3 className="mb-8 text-2xl font-bold text-white">Tech Stack</h3>
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
                         {skills.map((skill, index) => (
                             <motion.div
@@ -54,12 +47,12 @@ const About = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.3, delay: index * 0.1 }}
                                 viewport={{ once: true }}
-                                className="p-4 bg-gray-800/50 rounded-xl border border-gray-700 hover:border-cyan-400 hover:bg-gray-800 transition-all group flex flex-col items-center justify-center gap-3"
+                                className="group flex flex-col items-center justify-center gap-3 rounded-2xl border border-white/[0.06] bg-[#141414] p-4 transition-all hover:border-[#FF653F]/25 hover:bg-[#1a1a1a]"
                             >
                                 <div className={`text-4xl ${skill.color} transform group-hover:scale-110 transition-transform duration-300`}>
                                     {skill.icon}
                                 </div>
-                                <span className="font-medium text-gray-300 group-hover:text-white transition-colors">{skill.name}</span>
+                                <span className="font-medium text-[#888888] transition-colors group-hover:text-white">{skill.name}</span>
                             </motion.div>
                         ))}
                     </div>

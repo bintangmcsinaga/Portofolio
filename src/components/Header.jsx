@@ -1,18 +1,7 @@
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 const Header = () => {
-    const [isScrolled, setIsScrolled] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
     const navLinks = [
         { name: 'Home', href: '#home' },
         { name: 'About', href: '#about' },
@@ -22,51 +11,72 @@ const Header = () => {
     ];
 
     return (
-        <motion.header
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-gray-950/80 backdrop-blur-md shadow-lg border-b border-gray-800' : 'bg-transparent'
-                }`}
+        <motion.aside
+            initial={{ x: -280 }}
+            animate={{ x: 0 }}
+            transition={{ type: 'spring', stiffness: 260, damping: 30 }}
+            className="fixed inset-y-0 left-0 z-50 flex w-[260px] flex-col border-r border-white/[0.06] bg-[#111111]"
         >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-16">
-                    <div className="flex-shrink-0">
-                        <a href="#" className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">
-                            BS
-                        </a>
-                    </div>
+            {/* Profile / Brand */}
+            <a href="#home" className="flex items-center gap-3 px-5 pt-7 pb-2">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#FF653F] text-sm font-semibold text-white">
+                    BS
+                </span>
+                <span className="min-w-0">
+                    <span className="block truncate text-sm font-semibold tracking-[0.04em] text-white">Bintang Sinaga</span>
+                    <span className="block text-[10px] uppercase tracking-[0.32em] text-[#888888]">Backend Developer</span>
+                </span>
+            </a>
 
-                    <nav className="hidden md:block">
-                        <ul className="flex space-x-8">
-                            {navLinks.map((link) => (
-                                <li key={link.name}>
-                                    <a
-                                        href={link.href}
-                                        className="text-gray-300 hover:text-cyan-400 transition-colors duration-200 text-sm font-medium uppercase tracking-wider"
-                                    >
-                                        {link.name}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </nav>
+            {/* Divider */}
+            <div className="mx-5 my-4 h-px bg-white/[0.06]" />
 
-                    <div className="flex items-center space-x-3 md:space-x-4">
-                        <a href="https://github.com/bintangmcsinaga" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
-                            <FaGithub size={18} className="md:h-5 md:w-5" />
-                        </a>
-                        <a href="https://www.linkedin.com/in/bintang-sinaga-62b552229" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
-                            <FaLinkedin size={18} className="md:h-5 md:w-5" />
-                        </a>
-                        <a href="mailto:bintangsinaga007@gmail.com" className="text-gray-300 hover:text-white transition-colors">
-                            <FaEnvelope size={18} className="md:h-5 md:w-5" />
-                        </a>
-                    </div>
+            {/* Navigation */}
+            <nav className="flex-1 overflow-y-auto px-4">
+                <ul className="flex flex-col gap-1">
+                    {navLinks.map((link) => (
+                        <li key={link.name}>
+                            <a
+                                href={link.href}
+                                className="group flex items-center gap-3 rounded-lg px-3 py-2.5 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#999999] transition-all duration-200 hover:bg-white/[0.04] hover:text-white"
+                            >
+                                <span className="h-1.5 w-1.5 rounded-full bg-[#FF653F]/30 transition-all duration-200 group-hover:bg-[#FF653F]" />
+                                {link.name}
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
 
-                    {/* Mobile menu button could go here */}
+            {/* Social links at bottom */}
+            <div className="mt-auto px-5 pb-6">
+                <div className="mb-3 h-px bg-white/[0.06]" />
+                <div className="flex items-center justify-center gap-2.5">
+                    <a
+                        href="https://github.com/bintangmcsinaga"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex h-9 w-9 items-center justify-center rounded-full border border-white/[0.06] bg-white/[0.03] text-[#888888] transition-all duration-200 hover:bg-[#FF653F] hover:text-white"
+                    >
+                        <FaGithub size={16} />
+                    </a>
+                    <a
+                        href="https://www.linkedin.com/in/bintang-sinaga-62b552229"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex h-9 w-9 items-center justify-center rounded-full border border-white/[0.06] bg-white/[0.03] text-[#888888] transition-all duration-200 hover:bg-[#FF653F] hover:text-white"
+                    >
+                        <FaLinkedin size={16} />
+                    </a>
+                    <a
+                        href="mailto:bintangsinaga007@gmail.com"
+                        className="flex h-9 w-9 items-center justify-center rounded-full border border-white/[0.06] bg-white/[0.03] text-[#888888] transition-all duration-200 hover:bg-[#FF653F] hover:text-white"
+                    >
+                        <FaEnvelope size={16} />
+                    </a>
                 </div>
             </div>
-        </motion.header>
+        </motion.aside>
     );
 };
 

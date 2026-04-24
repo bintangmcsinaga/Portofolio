@@ -7,11 +7,11 @@ const GITHUB_USERNAME = 'bintangmcsinaga';
 const START_YEAR = 2025;
 const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const LEVEL_CLASSES = [
-    'bg-slate-800/70',
-    'bg-emerald-900/80',
-    'bg-emerald-700/90',
-    'bg-emerald-500',
-    'bg-emerald-300',
+    'bg-[#1a1a1a]',
+    'bg-[#2a2a2a]',
+    'bg-[#3d3d3d]',
+    'bg-[#c95542]',
+    'bg-[#FF653F]',
 ];
 
 const toDateKey = (date) => {
@@ -165,50 +165,109 @@ const Projects = () => {
     }, [activeYear, yearCalendars]);
 
     return (
-        <section id="projects" className="py-20 bg-gray-900/30">
+        <section id="projects" className="py-20">
             <div className="container mx-auto px-4">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="mb-16"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">My <span className="text-cyan-400">Projects</span></h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto">Here are some of my recent works.</p>
+                    <div className="mb-5 flex justify-center">
+                        <span className="section-kicker">Selected builds</span>
+                    </div>
+                    <div className="mx-auto max-w-3xl text-center">
+                        <h2 className="mb-4 text-3xl font-bold text-white md:text-5xl">Projects shaped around useful systems, clean execution, and durable product thinking.</h2>
+                        <p className="text-base leading-8 text-[#888888] md:text-lg">
+                            The structure stays the same, but the presentation now frames each project as a focused case study with stronger hierarchy, cleaner motion, and a more distinctive visual tone.
+                        </p>
+                    </div>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 gap-7 md:grid-cols-2">
                     {projects.map((project, index) => (
                         <motion.div
                             key={project.id}
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            transition={{ duration: 0.6, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
                             viewport={{ once: true }}
-                            whileHover={{ y: -10 }}
-                            className="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 shadow-lg hover:shadow-cyan-500/10 transition-all duration-300 group"
+                            whileHover={{ y: -6 }}
+                            className="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-[#141414] transition-all duration-500 hover:border-[#FF653F]/20"
                         >
-                            <div className="relative overflow-hidden h-48">
+
+                            {/* Image area */}
+                            <div className="relative h-52 overflow-hidden sm:h-60">
                                 <img
                                     src={project.image}
                                     alt={project.title}
-                                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                    className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                                 />
-                                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                    <Link to={`/project/${project.id}`} className="px-6 py-2 bg-cyan-500 text-white rounded-full font-medium hover:bg-cyan-600 transition-colors">View Details</Link>
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#141414] via-[#141414]/60 to-transparent" />
+
+                                {/* Floating index badge */}
+                                <div className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.06] bg-[#0d0d0d]/80 text-sm font-bold text-[#FF653F]">
+                                    0{index + 1}
+                                </div>
+
+                                {/* Date badge */}
+                                <div className="absolute left-4 top-4 rounded-full border border-white/[0.06] bg-[#0d0d0d]/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#FF653F]">
+                                    {project.date || 'Recent Work'}
+                                </div>
+
+                                {/* Role overlay at bottom of image */}
+                                <div className="absolute inset-x-0 bottom-0 px-5 pb-4">
+                                    <span className="text-[10px] font-medium uppercase tracking-[0.22em] text-[#999999]">{project.role}</span>
                                 </div>
                             </div>
 
-                            <div className="p-6">
-                                <h3 className="text-xl font-bold mb-2 text-white group-hover:text-cyan-400 transition-colors">{project.title}</h3>
-                                <p className="text-gray-400 mb-4 line-clamp-2">{project.description}</p>
-                                <div className="flex flex-wrap gap-2">
+                            {/* Content area */}
+                            <div className="relative flex flex-col gap-4 p-5 pt-4 sm:p-6 sm:pt-5">
+                                <div>
+                                    <h3 className="mb-2 text-xl font-bold leading-snug text-white transition-colors duration-300 group-hover:text-[#ff8a6a] sm:text-2xl">
+                                        {project.title}
+                                    </h3>
+                                    <p className="line-clamp-3 text-[13px] leading-relaxed text-[#888888] sm:text-sm sm:leading-7">
+                                        {project.description}
+                                    </p>
+                                </div>
+
+                                {/* Tags */}
+                                <div className="flex flex-wrap gap-1.5">
                                     {project.tags.map((tag) => (
-                                        <span key={tag} className="text-xs px-3 py-1 bg-gray-800 text-cyan-300 rounded-full border border-gray-700">
+                                        <span
+                                            key={tag}
+                                            className="rounded-lg border border-white/[0.06] bg-[#1a1a1a] px-2.5 py-1 text-[11px] font-medium text-[#999999] transition-colors duration-200 group-hover:border-[#FF653F]/15 group-hover:text-white"
+                                        >
                                             {tag}
                                         </span>
                                     ))}
+                                </div>
+
+                                {/* Divider */}
+                                <div className="h-px bg-white/[0.06]" />
+
+                                {/* CTA */}
+                                <div className="flex items-center justify-between">
+                                    <Link
+                                        to={`/project/${project.id}`}
+                                        className="group/btn inline-flex items-center gap-2.5 rounded-full bg-[#FF653F] px-5 py-2.5 text-[13px] font-semibold text-white transition-all duration-300 hover:brightness-110"
+                                    >
+                                        Explore Project
+                                        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white/20 text-xs transition-transform duration-300 group-hover/btn:translate-x-0.5">
+                                            →
+                                        </span>
+                                    </Link>
+                                    <Link
+                                        to={`/project/${project.id}`}
+                                        className="flex h-9 w-9 items-center justify-center rounded-full border border-white/[0.06] bg-white/[0.03] text-[#888888] transition-all duration-200 hover:border-[#FF653F]/25 hover:text-white"
+                                        aria-label={`View ${project.title} details`}
+                                    >
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-4 w-4">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                                        </svg>
+                                    </Link>
                                 </div>
                             </div>
                         </motion.div>
@@ -220,37 +279,40 @@ const Projects = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                     viewport={{ once: true }}
-                    className="mt-16 rounded-2xl border border-gray-800 bg-gray-900/70 p-6 shadow-xl"
+                    className="section-shell mt-16 p-6 sm:p-8"
                 >
                     <div className="flex flex-wrap items-center justify-between gap-4">
                         <div>
-                            <p className="text-sm text-gray-400">Productivity</p>
-                            <h3 className="text-xl font-semibold text-white">Live GitHub contributions</h3>
+                            <p className="text-sm uppercase tracking-[0.24em] text-[#FF653F]">Productivity</p>
+                            <h3 className="text-2xl font-semibold text-white">Live GitHub contributions</h3>
+                            <p className="mt-2 max-w-2xl text-sm leading-7 text-[#888888]">
+                                A compact view of consistency over time, presented as a built-in part of the portfolio instead of a generic embed block.
+                            </p>
                         </div>
                     </div>
 
                     {isLoading && (
-                        <p className="mt-6 text-sm text-gray-400">Memuat kontribusi...</p>
+                        <p className="mt-6 text-sm text-[#888888]">Memuat kontribusi...</p>
                     )}
                     {loadError && (
-                        <p className="mt-6 text-sm text-red-400">{loadError}</p>
+                        <p className="mt-6 text-sm text-[#FF9D87]">{loadError}</p>
                     )}
 
                     {!isLoading && !loadError && activeCalendar && (
                         <div className="mt-6">
                             <div className="flex flex-wrap items-center justify-between gap-4">
                                 <div>
-                                    <p className="text-xs uppercase tracking-wider text-gray-500">Pilih tahun</p>
+                                    <p className="text-xs uppercase tracking-[0.24em] text-[#666666]">Pilih tahun</p>
                                     <h4 className="text-base font-semibold text-white">{activeCalendar.year}</h4>
                                 </div>
                                 <select
                                     value={activeYear}
                                     onChange={(event) => setActiveYear(Number(event.target.value))}
-                                    className="rounded-lg border border-gray-800 bg-gray-950/80 px-3 py-2 text-sm text-gray-200 focus:outline-none focus:ring-2 focus:ring-cyan-400/60"
+                                    className="rounded-xl border border-white/[0.06] bg-[#111111] px-4 py-2 text-sm text-white focus:outline-none focus:border-[#FF653F]"
                                     aria-label="Pilih tahun kontribusi"
                                 >
                                     {years.map((year) => (
-                                        <option key={year} value={year} className="bg-gray-950">
+                                        <option key={year} value={year} className="bg-[#111111]">
                                             {year}
                                         </option>
                                     ))}
@@ -263,17 +325,17 @@ const Projects = () => {
                                     initial={{ opacity: 0, y: 12 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.9 }}
-                                    className="min-w-0 rounded-xl border border-gray-800 bg-gray-950/60 p-4"
+                                    className="min-w-0 rounded-2xl border border-white/[0.06] bg-[#111111] p-4"
                                 >
                                     <div className="flex items-center justify-between gap-3">
-                                        <span className="text-xs uppercase tracking-wider text-gray-500">
+                                        <span className="text-xs uppercase tracking-[0.24em] text-[#666666]">
                                             {activeCalendar.total} contributions
                                         </span>
                                     </div>
 
                                     <div className="mt-4 overflow-x-auto">
                                         <div className="min-w-[620px]">
-                                            <div className="flex gap-1 pl-8 text-[11px] text-gray-400">
+                                            <div className="flex gap-1 pl-8 text-[11px] text-[#666666]">
                                                 {activeCalendar.labels.map((label, index) => (
                                                     <span key={`month-${activeCalendar.year}-${index}`} className="w-3 whitespace-nowrap">
                                                         {label}
@@ -282,7 +344,7 @@ const Projects = () => {
                                             </div>
 
                                             <div className="mt-2 flex gap-1">
-                                                <div className="flex flex-col gap-1 pr-2 text-[11px] text-gray-400">
+                                                <div className="flex flex-col gap-1 pr-2 text-[11px] text-[#666666]">
                                                     <span className="h-3 leading-3">Sun</span>
                                                     <span className="h-3 leading-3">Mon</span>
                                                     <span className="h-3 leading-3">Tue</span>
@@ -298,7 +360,7 @@ const Projects = () => {
                                                             {week.map((day) => (
                                                                 <div
                                                                     key={`${activeCalendar.year}-${day.date.toISOString()}`}
-                                                                    className={`h-3 w-3 rounded-sm border border-gray-900/40 ${day.inYear ? LEVEL_CLASSES[day.level] : 'bg-transparent'}`}
+                                                                    className={`h-3 w-3 rounded-[3px] border border-[#0d0d0d] ${day.inYear ? LEVEL_CLASSES[day.level] : 'bg-transparent'}`}
                                                                     title={`${day.date.toLocaleDateString('en-US', {
                                                                         month: 'short',
                                                                         day: 'numeric',
@@ -312,13 +374,13 @@ const Projects = () => {
                                                 </div>
                                             </div>
 
-                                            <div className="mt-3 flex items-center justify-start text-xs text-gray-400">
+                                            <div className="mt-3 flex items-center justify-start gap-2 text-xs text-[#666666]">
                                                 <span>Less</span>
                                                 <div className="flex items-center gap-1">
                                                     {LEVEL_CLASSES.map((colorClass, index) => (
                                                         <span
                                                             key={`legend-${activeCalendar.year}-${index}`}
-                                                            className={`h-3 w-3 rounded-sm border border-gray-900/40 ${colorClass}`}
+                                                            className={`h-3 w-3 rounded-[3px] border border-[#0d0d0d] ${colorClass}`}
                                                         />
                                                     ))}
                                                 </div>
@@ -328,7 +390,7 @@ const Projects = () => {
                                     </div>
                                 </motion.div>
 
-                                <div className="min-w-0 rounded-xl border border-gray-800 bg-gray-950/60 p-4">
+                                <div className="min-w-0 rounded-2xl border border-white/[0.06] bg-[#111111] p-4">
                                     <img
                                         src="https://github-readme-streak-stats.herokuapp.com/?user=bintangmcsinaga&theme=dark&hide_border=false"
                                         alt="GitHub contribution streak"
@@ -339,8 +401,6 @@ const Projects = () => {
                             </div>
                         </div>
                     )}
-
-
                 </motion.div>
             </div>
         </section>
