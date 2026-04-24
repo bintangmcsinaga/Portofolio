@@ -64,7 +64,7 @@ const Home = () => {
         <>
             <Header />
 
-            <div className="ml-[260px]">
+            <div className="md:ml-[260px]">
                 {!isTetrisActive && (
                     <div className="fixed bottom-4 right-4 z-[70] flex flex-col gap-3 rounded-2xl border border-white/[0.06] bg-[#141414] p-3 sm:bottom-6 sm:right-6">
                         <Link
