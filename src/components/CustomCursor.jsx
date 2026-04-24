@@ -59,7 +59,7 @@ const CustomCursor = () => {
                         exit={{ opacity: 0 }}
                         transition={{ duration: 1, ease: "easeOut" }}
                         onAnimationComplete={() => removeRipple(ripple.id)}
-                        className="absolute w-10 h-10 rounded-full border border-cyan-400/30 bg-cyan-400/10 blur-[2px]"
+                        className="absolute h-10 w-10 rounded-full border border-[#FF653F]/30 bg-[radial-gradient(circle_at_center,rgba(255,101,63,0.18),rgba(69,46,90,0.05)_65%,transparent)] blur-[1px]"
                     />
                 ))}
             </AnimatePresence>

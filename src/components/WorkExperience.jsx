@@ -50,10 +50,13 @@ const WorkExperience = () => {
                     viewport={{ once: true }}
                     className="text-center mb-14"
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-                        Work <span className="text-cyan-400">Experience</span>
+                    <div className="mb-5 flex justify-center">
+                        <span className="section-kicker">Experience</span>
+                    </div>
+                    <h2 className="mb-4 text-3xl font-bold text-white md:text-4xl">
+                        Roles shaped by hands-on delivery, product ownership, and reliable execution.
                     </h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto">
+                    <p className="mx-auto max-w-2xl text-[#D7C7EE]">
                         A snapshot of recent roles and the impact delivered.
                     </p>
                 </motion.div>
@@ -66,23 +69,23 @@ const WorkExperience = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.4, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className="rounded-2xl border border-gray-800 bg-gray-900/70 p-6 shadow-lg"
+                            className="rounded-[28px] border border-white/10 bg-[#24124f]/78 p-6 shadow-[0_24px_55px_rgba(10,6,26,0.35)]"
                         >
                             <div className="flex flex-wrap items-center justify-between gap-3">
                                 <div>
                                     <h3 className="text-xl font-semibold text-white">{item.role}</h3>
-                                    <p className="text-sm text-gray-400">{item.company}</p>
+                                    <p className="text-sm text-[#FFB39F]">{item.company}</p>
                                 </div>
-                                <div className="text-sm text-gray-400 text-right">
+                                <div className="text-right text-sm text-[#D7C7EE]">
                                     <p>{item.period}</p>
                                     <p>{item.location}</p>
                                 </div>
                             </div>
 
-                            <ul className="mt-4 space-y-2 text-sm text-gray-300">
+                            <ul className="mt-4 space-y-2 text-sm text-[#E6DCF7]">
                                 {item.highlights.map((highlight) => (
                                     <li key={highlight} className="flex gap-2">
-                                        <span className="mt-1 h-1.5 w-1.5 rounded-full bg-cyan-400"></span>
+                                        <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#FF653F]"></span>
                                         <span>{highlight}</span>
                                     </li>
                                 ))}

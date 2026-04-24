@@ -17,7 +17,7 @@ const ProjectDetail = () => {
         return (
             <div className="min-h-screen flex flex-col items-center justify-center text-center px-4">
                 <h2 className="text-3xl font-bold text-white mb-4">Project Not Found</h2>
-                <Link to="/#projects" className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2">
+                <Link to="/#projects" className="flex items-center gap-2 text-[#FF653F] hover:text-[#FF8A6C]">
                     <FaArrowLeft /> Back to Home
                 </Link>
             </div>
@@ -52,7 +52,7 @@ const ProjectDetail = () => {
     const tagsContent = (
         <div className="flex flex-wrap gap-3">
             {projectTags.map((tag) => (
-                <span key={tag} className="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-sm border border-cyan-500/30">
+                <span key={tag} className="rounded-full border border-white/10 bg-[#452E5A]/35 px-3 py-1 text-sm text-[#F3E9FF]">
                     {tag}
                 </span>
             ))}
@@ -67,7 +67,7 @@ const ProjectDetail = () => {
                     type="button"
                     onClick={() => updateCurrentImageIndex(index)}
                     className={`h-2.5 rounded-full transition-all ${
-                        currentImageIndex === index ? 'w-7 bg-cyan-400' : 'w-2.5 bg-white/40 hover:bg-white/60'
+                        currentImageIndex === index ? 'w-7 bg-[#FF653F]' : 'w-2.5 bg-white/30 hover:bg-white/50'
                     }`}
                     aria-label={`Go to image ${index + 1}`}
                 />
@@ -76,15 +76,15 @@ const ProjectDetail = () => {
     ) : null;
 
     return (
-        <div className="pt-10 pb-20 min-h-screen">
+        <div className="min-h-screen pt-10 pb-20">
             <div className="container mx-auto px-4 max-w-5xl">
-                <Link to="/#projects" className="inline-flex items-center text-gray-400 hover:text-cyan-400 mb-8 transition-colors">
+                <Link to="/#projects" className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-[#D7C7EE] transition-colors hover:border-[#FF653F]/40 hover:text-white">
                     <FaArrowLeft className="mr-2" /> Back to Home
                 </Link>
 
                 <div>
                     <div className="mb-12">
-                        <div className="relative rounded-2xl overflow-hidden border border-gray-800 shadow-2xl bg-gray-950">
+                        <div className="relative overflow-hidden rounded-[34px] border border-white/10 bg-[#1A0F43]/92 shadow-[0_30px_80px_rgba(10,6,26,0.42)]">
                             <img
                                 src={projectImages[currentImageIndex]}
                                 alt={`${project.title} - Slide ${currentImageIndex + 1}`}
@@ -96,7 +96,7 @@ const ProjectDetail = () => {
                                     <button
                                         type="button"
                                         onClick={showPrevImage}
-                                        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/45 text-white hover:bg-cyan-500 transition-colors flex items-center justify-center"
+                                        className="absolute left-4 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-[#140A36]/60 text-white transition-colors hover:border-[#FF653F]/45 hover:bg-[#FF653F]"
                                         aria-label="Previous project image"
                                     >
                                         <FaChevronLeft />
@@ -104,7 +104,7 @@ const ProjectDetail = () => {
                                     <button
                                         type="button"
                                         onClick={showNextImage}
-                                        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-black/45 text-white hover:bg-cyan-500 transition-colors flex items-center justify-center"
+                                        className="absolute right-4 top-1/2 z-20 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-[#140A36]/60 text-white transition-colors hover:border-[#FF653F]/45 hover:bg-[#FF653F]"
                                         aria-label="Next project image"
                                     >
                                         <FaChevronRight />
@@ -112,9 +112,12 @@ const ProjectDetail = () => {
                                 </>
                             )}
 
-                            <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-transparent opacity-80 pointer-events-none"></div>
+                            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(20,10,54,0.02),rgba(20,10,54,0.24)_50%,rgba(20,10,54,0.9)_100%)]"></div>
                             <div className="hidden md:block absolute bottom-0 left-0 p-6 md:p-10">
-                                <h1 className="text-4xl md:text-4xl font-bold text-white mb-4">{project.title}</h1>
+                                <p className="mb-3 inline-flex rounded-full border border-white/10 bg-white/10 px-3 py-1 text-[11px] uppercase tracking-[0.28em] text-[#FFD7CA]">
+                                    Detailed case study
+                                </p>
+                                <h1 className="mb-4 text-4xl font-bold text-white md:text-5xl">{project.title}</h1>
                                 {tagsContent}
                                 {imageDots}
                             </div>
@@ -127,40 +130,50 @@ const ProjectDetail = () => {
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-                        <div className="md:col-span-2 space-y-8">
-                            <div>
-                                <h2 className="text-2xl font-bold text-white mb-4">Overview</h2>
-                                <p className="text-gray-300 text-lg leading-relaxed pt-2 border-t border-gray-800">
+                    <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+                        <div className="space-y-8 md:col-span-2">
+                            <div className="section-shell p-7 sm:p-8">
+                                <div className="mb-5 flex items-center gap-3">
+                                    <span className="section-kicker">Overview</span>
+                                </div>
+                                <p className="border-t border-white/10 pt-5 text-lg leading-relaxed text-[#E6DCF7]">
                                     {project.fullDescription}
                                 </p>
                             </div>
 
-                            <div>
-                                <h2 className="text-2xl font-bold text-white mb-4">Features & Tech</h2>
-                                <ul className="list-disc list-inside text-gray-300 space-y-2 pt-2 border-t border-gray-800">
+                            <div className="section-shell p-7 sm:p-8">
+                                <div className="mb-5 flex items-center gap-3">
+                                    <span className="section-kicker">Features & Tech</span>
+                                </div>
+                                <ul className="space-y-3 border-t border-white/10 pt-5 text-[#E6DCF7]">
                                     {projectFeatures.length > 0 ? (
                                         projectFeatures.map((feature, index) => (
-                                            <li key={`${project.id}-feature-${index}`}>{feature}</li>
+                                            <li key={`${project.id}-feature-${index}`} className="flex gap-3">
+                                                <span className="mt-2 h-2 w-2 rounded-full bg-[#FF653F]" />
+                                                <span>{feature}</span>
+                                            </li>
                                         ))
                                     ) : (
-                                        <li>No features available.</li>
+                                        <li className="flex gap-3">
+                                            <span className="mt-2 h-2 w-2 rounded-full bg-[#FF653F]" />
+                                            <span>No features available.</span>
+                                        </li>
                                     )}
                                 </ul>
                             </div>
                         </div>
 
                         <div className="space-y-8">
-                            <div className="bg-gray-900 p-6 rounded-xl border border-gray-800">
-                                <h3 className="text-lg font-bold text-white mb-4">Project Info</h3>
+                            <div className="section-shell p-6">
+                                <h3 className="mb-4 text-lg font-bold text-white">Project Info</h3>
                                 <div className="space-y-4">
                                     <div>
-                                        <span className="block text-gray-500 text-sm">Date</span>
-                                        <span className="text-gray-200">{project.date}</span>
+                                        <span className="block text-sm text-[#A996C7]">Date</span>
+                                        <span className="text-[#F6F0FF]">{project.date}</span>
                                     </div>
                                     <div>
-                                        <span className="block text-gray-500 text-sm">Role</span>
-                                        <span className="text-gray-200">{role}</span>
+                                        <span className="block text-sm text-[#A996C7]">Role</span>
+                                        <span className="text-[#F6F0FF]">{role}</span>
                                     </div>
                                 </div>
                             </div>
@@ -168,12 +181,12 @@ const ProjectDetail = () => {
                             {(hasLiveDemo || hasViewCode) && (
                                 <div className="flex flex-col gap-4">
                                     {hasLiveDemo && (
-                                        <a href={liveDemoUrl} target="_blank" rel="noopener noreferrer" className="w-full py-3 bg-cyan-600 hover:bg-cyan-500 text-white font-medium rounded-lg text-center transition-colors flex items-center justify-center gap-2">
+                                        <a href={liveDemoUrl} target="_blank" rel="noopener noreferrer" className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#FF653F] py-3 font-medium text-white transition-colors hover:bg-[#ff7a59]">
                                             <FaExternalLinkAlt /> Live Demo
                                         </a>
                                     )}
                                     {hasViewCode && (
-                                        <a href={viewCodeUrl} target="_blank" rel="noopener noreferrer" className="w-full py-3 bg-gray-800 hover:bg-gray-700 text-white font-medium rounded-lg text-center transition-colors flex items-center justify-center gap-2">
+                                        <a href={viewCodeUrl} target="_blank" rel="noopener noreferrer" className="flex w-full items-center justify-center gap-2 rounded-xl border border-white/10 bg-[#452E5A]/40 py-3 font-medium text-white transition-colors hover:border-[#FF653F]/40 hover:bg-[#452E5A]/65">
                                             <FaGithub /> View Code
                                         </a>
                                     )}

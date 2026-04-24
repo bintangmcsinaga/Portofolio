@@ -1,15 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  --color-primary: #1e104e;
+  --color-secondary: #452e5a;
+  --color-accent: #ff653f;
+  --color-text: #f6f0ff;
+  --color-muted: #d7c7ee;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color-scheme: dark;
+  color: var(--color-text);
+  background-color: var(--color-primary);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -21,9 +28,70 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background-color: #0f172a;
-  /* Slate 900 fallback */
+  background:
+    radial-gradient(circle at top left, rgba(255, 101, 63, 0.2), transparent 28%),
+    radial-gradient(circle at top right, rgba(69, 46, 90, 0.42), transparent 34%),
+    linear-gradient(180deg, #140a36 0%, #1e104e 46%, #160c3b 100%);
+  background-attachment: fixed;
   @apply text-white overflow-x-hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+[data-display='true'] {
+  font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.03em;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+@layer components {
+  .section-shell {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 32px;
+    background: rgba(36, 18, 79, 0.78);
+    box-shadow: 0 28px 70px rgba(10, 6, 26, 0.35);
+    backdrop-filter: blur(10px);
+  }
+
+  .section-kicker {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgba(255, 101, 63, 0.3);
+    border-radius: 9999px;
+    background: rgba(255, 101, 63, 0.1);
+    padding: 0.5rem 1rem;
+    color: #ffd4c8;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+  }
+
+  .field-surface {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    background: #1e104e;
+    color: #ffffff;
+    transition: border-color 180ms ease;
+  }
+
+  .field-surface::placeholder {
+    color: #a996c7;
+  }
+
+  .field-surface:focus {
+    border-color: #ff653f;
+    outline: none;
+  }
 }
 
 /* Custom Scrollbar */
@@ -32,11 +100,17 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-900;
+  background: #1b103f;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gray-700 rounded-full hover:bg-gray-600;
+  background: linear-gradient(180deg, #452e5a 0%, #ff653f 100%);
+  border-radius: 9999px;
+}
+
+::selection {
+  background: rgba(255, 101, 63, 0.28);
+  color: #ffffff;
 }
 
 html {
