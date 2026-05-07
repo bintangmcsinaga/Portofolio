@@ -1,6 +1,27 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { FaCloudSun, FaTint } from 'react-icons/fa';
 
 const Hero = () => {
+    const [weather, setWeather] = useState(null);
+
+    useEffect(() => {
+        const fetchWeather = async () => {
+            try {
+                // Open-Meteo API Tangerang Selatan
+                const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=-6.2886&longitude=106.7179&current=temperature_2m,precipitation,weather_code');
+                const data = await response.json();
+                if (data.current) {
+                    setWeather(data.current);
+                }
+            } catch (error) {
+                console.error('Failed to fetch weather data:', error);
+            }
+        };
+
+        fetchWeather();
+    }, []);
+
     return (
         <section id="home" className="relative overflow-hidden pb-16 pt-28 sm:pt-32">
             <div className="relative z-10 mx-auto grid min-h-[calc(100vh-9rem)] w-full max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[minmax(0,1.35fr)_320px] lg:items-center">
@@ -57,8 +78,36 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.8 }}
-                    className="w-full"
+                    className="w-full flex flex-col gap-4"
                 >
+                    {weather && (
+                        <div className="rounded-2xl border border-white/[0.06] bg-[#141414] p-4 transition-transform duration-300 hover:scale-[1.02]">
+                            <div className="mb-3 flex items-center justify-between">
+                                <span className="text-xs uppercase tracking-[0.28em] text-[#FF653F]">Weather</span>
+                                <span className="rounded-full bg-white/[0.04] px-3 py-1 text-[11px] text-[#666666]">Tangsel, ID</span>
+                            </div>
+                            <div className="flex items-center justify-between mt-2">
+                                <div className="flex items-center gap-3">
+                                    <FaCloudSun className="text-[#FF653F]" size={24} />
+                                    <span className="text-2xl font-bold text-white">
+                                        {Math.round(weather.temperature_2m)}°C
+                                    </span>
+                                </div>
+                                <div className="flex flex-col items-end gap-1">
+                                    <div className="flex items-center gap-2">
+                                        <FaTint className="text-[#3b82f6]" size={14} />
+                                        <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#888888]">
+                                            Curah Hujan
+                                        </span>
+                                    </div>
+                                    <span className="text-xs font-bold text-white">
+                                        {weather.precipitation} mm
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+
                     <div className="rounded-2xl border border-white/[0.06] bg-[#141414] p-4 transition-transform duration-300 hover:scale-[1.02]">
                         <div className="mb-3 flex items-center justify-between">
                             <span className="text-xs uppercase tracking-[0.28em] text-[#FF653F]">Daily note</span>

@@ -1,27 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaCloudSun, FaTint } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 const Header = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
-    const [weather, setWeather] = useState(null);
-
-    useEffect(() => {
-        const fetchWeather = async () => {
-            try {
-                // Open-Meteo API Tangerang Selatan
-                const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=-6.2886&longitude=106.7179&current=temperature_2m,precipitation,weather_code');
-                const data = await response.json();
-                if (data.current) {
-                    setWeather(data.current);
-                }
-            } catch (error) {
-                console.error('Failed to fetch weather data:', error);
-            }
-        };
-
-        fetchWeather();
-    }, []);
 
     const navLinks = [
         { name: 'Home', href: '#home' },
@@ -82,35 +64,6 @@ const Header = () => {
                         <span className="block text-[11px] uppercase tracking-[0.32em] text-[#888888] mt-1">Backend Developer</span>
                     </span>
                 </a>
-
-                {weather && (
-                    <div className="mx-5 mb-4 rounded-xl border border-white/[0.06] bg-white/[0.02] p-3 transition-all duration-200 hover:bg-white/[0.04]">
-                        <div className="flex flex-col gap-2">
-                            <div className="flex items-center justify-between">
-                                <div className="flex items-center gap-2">
-                                    <FaCloudSun className="text-[#FF653F]" size={16} />
-                                    <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#888888]">
-                                        Tangsel, ID
-                                    </span>
-                                </div>
-                                <span className="text-xs font-bold text-white">
-                                    {Math.round(weather.temperature_2m)}°C
-                                </span>
-                            </div>
-                            <div className="flex items-center justify-between">
-                                <div className="flex items-center gap-2">
-                                    <FaTint className="text-[#3b82f6]" size={14} />
-                                    <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#888888]">
-                                        Curah Hujan
-                                    </span>
-                                </div>
-                                <span className="text-xs font-bold text-white">
-                                    {weather.precipitation} mm
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                )}
 
                 {/* Divider */}
                 <div className="mx-5 my-4 h-px bg-white/[0.06]" />
