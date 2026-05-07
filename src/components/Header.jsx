@@ -9,7 +9,7 @@ const Header = () => {
     useEffect(() => {
         const fetchWeather = async () => {
             try {
-                // Open-Meteo API for Tangerang Selatan
+                // Open-Meteo API Tangerang Selatan
                 const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=-6.2886&longitude=106.7179&current=temperature_2m,precipitation,weather_code');
                 const data = await response.json();
                 if (data.current) {
@@ -69,13 +69,17 @@ const Header = () => {
                 className={`fixed inset-y-0 left-0 z-50 flex w-[260px] flex-col border-r border-white/[0.06] bg-[#111111] transition-transform duration-300 md:translate-x-0 ${mobileOpen ? 'translate-x-0' : '-translate-x-full'}`}
             >
                 {/* Profile / Brand */}
-                <a href="#home" onClick={handleNavClick} className="flex items-center gap-3 px-5 pt-7 pb-2">
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[#FF653F] text-sm font-semibold text-white">
-                        BS
-                    </span>
+                <a href="#home" onClick={handleNavClick} className="flex flex-col items-center gap-4 px-5 pt-8 pb-4">
+                    <div className="h-24 w-24 shrink-0 overflow-hidden rounded-full border border-white/[0.06]">
+                        <img
+                            src="/foto.png"
+                            alt="Bintang Sinaga"
+                            className="h-full w-full object-cover"
+                        />
+                    </div>
                     <span className="min-w-0">
-                        <span className="block truncate text-sm font-semibold tracking-[0.04em] text-white">Bintang Sinaga</span>
-                        <span className="block text-[10px] uppercase tracking-[0.32em] text-[#888888]">Backend Developer</span>
+                        <span className="block truncate text-lg font-bold tracking-[0.02em] text-white">Bintang Sinaga</span>
+                        <span className="block text-[11px] uppercase tracking-[0.32em] text-[#888888] mt-1">Backend Developer</span>
                     </span>
                 </a>
 
