@@ -83,6 +83,35 @@ const Header = () => {
                     </span>
                 </a>
 
+                {weather && (
+                    <div className="mx-5 mb-4 rounded-xl border border-white/[0.06] bg-white/[0.02] p-3 transition-all duration-200 hover:bg-white/[0.04]">
+                        <div className="flex flex-col gap-2">
+                            <div className="flex items-center justify-between">
+                                <div className="flex items-center gap-2">
+                                    <FaCloudSun className="text-[#FF653F]" size={16} />
+                                    <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#888888]">
+                                        Tangsel, ID
+                                    </span>
+                                </div>
+                                <span className="text-xs font-bold text-white">
+                                    {Math.round(weather.temperature_2m)}°C
+                                </span>
+                            </div>
+                            <div className="flex items-center justify-between">
+                                <div className="flex items-center gap-2">
+                                    <FaTint className="text-[#3b82f6]" size={14} />
+                                    <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#888888]">
+                                        Curah Hujan
+                                    </span>
+                                </div>
+                                <span className="text-xs font-bold text-white">
+                                    {weather.precipitation} mm
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
                 {/* Divider */}
                 <div className="mx-5 my-4 h-px bg-white/[0.06]" />
 
@@ -106,34 +135,6 @@ const Header = () => {
 
                 {/* Social links at bottom */}
                 <div className="mt-auto px-5 pb-6">
-                    {weather && (
-                        <div className="mb-4 rounded-xl border border-white/[0.06] bg-white/[0.02] p-3 transition-all duration-200 hover:bg-white/[0.04]">
-                            <div className="flex flex-col gap-2">
-                                <div className="flex items-center justify-between">
-                                    <div className="flex items-center gap-2">
-                                        <FaCloudSun className="text-[#FF653F]" size={16} />
-                                        <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#888888]">
-                                            Tangsel, ID
-                                        </span>
-                                    </div>
-                                    <span className="text-xs font-bold text-white">
-                                        {Math.round(weather.temperature_2m)}°C
-                                    </span>
-                                </div>
-                                <div className="flex items-center justify-between">
-                                    <div className="flex items-center gap-2">
-                                        <FaTint className="text-[#3b82f6]" size={14} />
-                                        <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#888888]">
-                                            Curah Hujan
-                                        </span>
-                                    </div>
-                                    <span className="text-xs font-bold text-white">
-                                        {weather.precipitation} mm
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    )}
                     <div className="mb-3 h-px bg-white/[0.06]" />
                     <div className="flex items-center justify-center gap-2.5">
                         <a
