@@ -1,0 +1,75 @@
+BINTANG MAS CAHYA SINAGA
+Programmer
+Tangerang Selatan, Indonesia | bintangsinaga007@gmail.com | bintang.web.id | github.com/bintangmcsinaga | www.linkedin.com/in/bintang-sinaga-62b552229
+
+PROFESSIONAL SUMMARY
+Backend-focused developer who enjoys designing scalable systems, dependable APIs, and practical interfaces that feel organized instead of crowded. Experienced in full-stack web applications, Flutter mobile products, Firebase-backed workflows, database design, authentication, and machine learning/NLP pipelines.
+
+TECHNICAL SKILLS
+JavaScript, React, Express, Node.js, Python, Machine Learning, Flutter, Git, MySQL, PostgreSQL, MongoDB, Prisma ORM, Firebase, Docker, Kubernetes, Figma
+
+PROFESSIONAL EXPERIENCE
+Web Full Stack Developer | Freelance
+2023 - Present | Remote
+- Developed full-stack web applications using React, Node.js, and MongoDB.
+- Designed RESTful APIs and database schemas for small-to-mid scale products.
+- Implemented authentication, role-based access, and audit-friendly logging.
+- Optimized query performance and improved API response times.
+
+Mobile App Developer (Flutter) | Freelance
+2024 - Present | Remote
+- Built cross-platform mobile applications using Flutter and Dart.
+- Integrated RESTful APIs and third-party services for dynamic content.
+- Implemented state management solutions (Provider, Riverpod) for scalable app architecture.
+- Optimized app performance and reduced load times through efficient coding practices.
+
+IT Support | Kantor Notaris Fransisca Panjaitan, S.H., M.Kn.
+2021 - Present | Remote
+- Provided technical support and troubleshooting for office IT infrastructure.
+- Managed software installations, updates, and user access controls.
+- Assisted in the transition to remote work setups and cloud-based collaboration tools.
+
+SELECTED PROJECTS
+Go Toba | Mobile Developer | January 2024
+Tech: Flutter, Firebase
+Go Toba is a Flutter-based mobile tourism application for the Lake Toba region that integrates login, personalised recommendations, hotel/ticket bookings, virtual account payments, transaction history and reviews, and the sharing of travel moments in a single Firebase-based platform with a bilingual interface and consistent UI.
+- User authentication and account lifecycle with Firebase Authentication (email/password, Google Sign-In, Facebook login), plus email verification and password reset flows.
+- Persistent user session and app preferences using shared_preferences (login state, UID, selected language).
+- Personalized home recommendations (hotels, culinary, destinations) powered by Cloud Firestore with user tag-based matching logic.
+- Hotel booking flow (date selection, room selection, payment method, virtual account, booking confirmation) built with Flutter UI + Cloud Firestore.
+Code: github.com/bintangmcsinaga/Go-Toba
+
+My Portfolio | Frontend Developer | January 2026
+Tech: React Vite, JavaScript, CI/CD, VPS
+My previous portfolio site focused on minimalism and typography.
+- Minimalist landing page with typography-first visual hierarchy.
+- Custom section transitions and responsive spacing system.
+- Lightweight architecture optimized for static hosting.
+- CI/CD pipeline for automated deployment to VPS hosting.
+Code: github.com/bintangmcsinaga/Portofolio
+
+AFB_SenA | Backend Developer, Machine Learning Engineer | June 2025
+Tech: React, Express, FastApI, MongoDB, Python, Machine Learning
+AFB_SENA is an end-to-end sentiment analysis platform that unifies multi-platform data extraction, text preprocessing, sentiment labeling, and RoBERTa-based inference in a single web workflow.
+- Authentication (login/register) + protected routes: Express.js, MongoDB/Mongoose, JWT, bcryptjs, React Router (ProtectedRoute).
+- YouTube,Play Store, X comment extraction: FastAPI, google-api-python-client, pandas, Excel export.
+- HTML element cleansing: BeautifulSoup4 via /clean-html endpoint + preprocessing UI pipeline.
+- Text normalization & slang expansion: regex, contractions, custom slang dictionary (kamus_slang.py) via /clean-text.
+Code: github.com/bintangmcsinaga/sistem-rekomendasi-pariwisata-danau-toba
+
+Remind | Mobile Developer | March 2026
+Tech: Flutter, Firebase, NLP-based
+Remind is a Flutter app where users write free-form activity notes that are analyzed to detect habits, predict the next occurrence, and send automatic reminders.
+- Long text note input (single multi-line field).
+- Create, edit, delete, and list notes.
+- Rule-based NLP to detect activity and category from notes.
+- Notifications/reminders driven by predictions.
+Code: github.com/bintangmcsinaga/remind
+
+CERTIFICATIONS
+- Red Hat System Administration I (RH124-8.2) - Red Hat, June 2023 (RH124-8.2)
+- HCIA-AI V3.0 Course - Huawei Talent Online, July 2023 (HCIA-AI-V3.0)
+- HCIA-Datacom V1.0 Course - Huawei Talent Online, March 2024 (HCIA-Datacom-V1.0)
+- Pengembangan Aplikasi Android Intermediate - Dicoding Indonesia, June 2024 (2VX3R5W94ZYQ)
+- Bangkit Academy 2024 Batch 1 - Mobile Development - Bangkit Academy, July 2024 (A172D4KY4573)
+- Magang dan Studi Independen Bersertifikat Batch 6 - Kampus Merdeka, July 2024 (MSIB-Batch-6)
