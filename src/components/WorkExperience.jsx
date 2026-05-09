@@ -1,74 +1,11 @@
 import { motion } from 'framer-motion';
 import { FaAward, FaExternalLinkAlt } from 'react-icons/fa';
+import { certifications, experiences } from '../data/profile';
 
-const experiences = [
-    {
-        role: 'Web Full Stack Developer',
-        company: 'Freelance',
-        period: '2023 - Present',
-        location: 'Remote',
-        highlights: [
-            'Developed full-stack web applications using React, Node.js, and MongoDB.',
-            'Designed RESTful APIs and database schemas for small-to-mid scale products.',
-            'Implemented authentication, role-based access, and audit-friendly logging.',
-            'Optimized query performance and improved API response times.',
-        ],
-    },
-    {
-        role: 'Mobile App Developer (Flutter)',
-        company: 'Freelance',
-        period: '2024 - Present',
-        location: 'Remote',
-        highlights: [
-            'Built cross-platform mobile applications using Flutter and Dart.',
-            'Integrated RESTful APIs and third-party services for dynamic content.',
-            'Implemented state management solutions (Provider, Riverpod) for scalable app architecture.',
-            'Optimized app performance and reduced load times through efficient coding practices.',
-        ],
-    },
-    {
-        role: 'IT Support',
-        company: 'Kantor Notaris Fransisca Panjaitan, S.H., M.Kn.',
-        period: '2021 - Present',
-        location: 'Remote',
-        highlights: [
-            'Provided technical support and troubleshooting for office IT infrastructure.',
-            'Managed software installations, updates, and user access controls.',
-            'Assisted in the transition to remote work setups and cloud-based collaboration tools.',
-        ],
-    },
-];
-
-const certifications = [
-    {
-        name: 'AWS Certified Cloud Practitioner',
-        issuer: 'Amazon Web Services',
-        date: 'January 2025',
-        credentialId: 'AWS-CCP-2025-XXXXX',
-        link: '#',
-    },
-    {
-        name: 'Google Associate Cloud Engineer',
-        issuer: 'Google Cloud',
-        date: 'March 2025',
-        credentialId: 'GCP-ACE-2025-XXXXX',
-        link: '#',
-    },
-    {
-        name: 'Meta Back-End Developer Professional Certificate',
-        issuer: 'Meta (via Coursera)',
-        date: 'June 2024',
-        credentialId: 'META-BE-2024-XXXXX',
-        link: '#',
-    },
-    {
-        name: 'TensorFlow Developer Certificate',
-        issuer: 'Google',
-        date: 'September 2024',
-        credentialId: 'TF-DEV-2024-XXXXX',
-        link: '#',
-    },
-];
+const fromPublicFile = (path) => {
+    if (!path) return '#';
+    return `${import.meta.env.BASE_URL}${path.split('/').map(encodeURIComponent).join('/')}`;
+};
 
 const WorkExperience = () => {
     return (
@@ -148,44 +85,48 @@ const WorkExperience = () => {
                 </motion.div>
 
                 <div className="max-w-4xl mx-auto grid grid-cols-1 gap-4 sm:grid-cols-2">
-                    {certifications.map((cert, index) => (
-                        <motion.div
-                            key={cert.credentialId}
-                            initial={{ opacity: 0, y: 24 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.4, delay: index * 0.1 }}
-                            viewport={{ once: true }}
-                            className="group rounded-2xl border border-white/[0.06] bg-[#141414] p-5 transition-all duration-300 hover:border-[#FF653F]/20"
-                        >
-                            <div className="flex items-start gap-4">
-                                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#FF653F]/10 text-[#FF653F]">
-                                    <FaAward size={20} />
-                                </div>
-                                <div className="min-w-0 flex-1">
-                                    <h3 className="text-base font-semibold leading-snug text-white transition-colors duration-300 group-hover:text-[#ff8a6a]">
-                                        {cert.name}
-                                    </h3>
-                                    <p className="mt-1 text-sm text-[#FF653F]">{cert.issuer}</p>
-                                </div>
-                            </div>
+                    {certifications.map((cert, index) => {
+                        const credentialHref = cert.file ? fromPublicFile(cert.file) : cert.link;
 
-                            <div className="mt-4 flex items-center justify-between">
-                                <div className="space-y-0.5">
-                                    <p className="text-[11px] uppercase tracking-[0.2em] text-[#666666]">{cert.date}</p>
-                                    <p className="text-[11px] text-[#444444]">{cert.credentialId}</p>
+                        return (
+                            <motion.div
+                                key={cert.credentialId}
+                                initial={{ opacity: 0, y: 24 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.4, delay: index * 0.1 }}
+                                viewport={{ once: true }}
+                                className="group rounded-2xl border border-white/[0.06] bg-[#141414] p-5 transition-all duration-300 hover:border-[#FF653F]/20"
+                            >
+                                <div className="flex items-start gap-4">
+                                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#FF653F]/10 text-[#FF653F]">
+                                        <FaAward size={20} />
+                                    </div>
+                                    <div className="min-w-0 flex-1">
+                                        <h3 className="text-base font-semibold leading-snug text-white transition-colors duration-300 group-hover:text-[#ff8a6a]">
+                                            {cert.name}
+                                        </h3>
+                                        <p className="mt-1 text-sm text-[#FF653F]">{cert.issuer}</p>
+                                    </div>
                                 </div>
-                                <a
-                                    href={cert.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.06] bg-white/[0.03] px-3 py-1.5 text-[11px] font-medium text-[#888888] transition-all duration-200 hover:border-[#FF653F]/25 hover:text-white"
-                                >
-                                    View Credential
-                                    <FaExternalLinkAlt size={9} />
-                                </a>
-                            </div>
-                        </motion.div>
-                    ))}
+
+                                <div className="mt-4 flex items-center justify-between gap-3">
+                                    <div className="space-y-0.5">
+                                        <p className="text-[11px] uppercase tracking-[0.2em] text-[#666666]">{cert.date}</p>
+                                        <p className="text-[11px] text-[#444444]">{cert.credentialId}</p>
+                                    </div>
+                                    <a
+                                        href={credentialHref}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex shrink-0 items-center gap-1.5 rounded-full border border-white/[0.06] bg-white/[0.03] px-3 py-1.5 text-[11px] font-medium text-[#888888] transition-all duration-200 hover:border-[#FF653F]/25 hover:text-white"
+                                    >
+                                        View Credential
+                                        <FaExternalLinkAlt size={9} />
+                                    </a>
+                                </div>
+                            </motion.div>
+                        );
+                    })}
                 </div>
             </div>
         </section>

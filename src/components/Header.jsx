@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaFileDownload } from 'react-icons/fa';
+import { profile } from '../data/profile';
 
 const Header = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
+    const cvHref = `${import.meta.env.BASE_URL}${profile.cvFile}`;
 
     const navLinks = [
         { name: 'Home', href: '#home' },
@@ -55,13 +57,13 @@ const Header = () => {
                     <div className="h-24 w-24 shrink-0 overflow-hidden rounded-full border border-white/[0.06]">
                         <img
                             src="/foto.png"
-                            alt="Bintang Sinaga"
+                            alt={profile.name}
                             className="h-full w-full object-cover"
                         />
                     </div>
                     <span className="min-w-0">
-                        <span className="block truncate text-lg font-bold tracking-[0.02em] text-white">Bintang Sinaga</span>
-                        <span className="block text-[11px] uppercase tracking-[0.32em] text-[#888888] mt-1">Backend Developer</span>
+                        <span className="block truncate text-lg font-bold tracking-[0.02em] text-white">{profile.name}</span>
+                        <span className="block text-[11px] uppercase tracking-[0.32em] text-[#888888] mt-1">{profile.role}</span>
                     </span>
                 </a>
 
@@ -88,10 +90,20 @@ const Header = () => {
 
                 {/* Social links at bottom */}
                 <div className="mt-auto px-5 pb-6">
+                    <a
+                        href={cvHref}
+                        download={profile.cvFile}
+                        onClick={handleNavClick}
+                        className="mb-4 flex w-full items-center justify-center gap-2 rounded-lg border border-[#FF653F]/20 bg-[#FF653F]/10 px-3 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#ff8a6a] transition-all duration-200 hover:bg-[#FF653F] hover:text-white"
+                        aria-label="Download CV ATS"
+                    >
+                        <FaFileDownload size={14} />
+                        <span>Download CV ATS</span>
+                    </a>
                     <div className="mb-3 h-px bg-white/[0.06]" />
                     <div className="flex items-center justify-center gap-2.5">
                         <a
-                            href="https://github.com/bintangmcsinaga"
+                            href={profile.socials.github}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex h-9 w-9 items-center justify-center rounded-full border border-white/[0.06] bg-white/[0.03] text-[#888888] transition-all duration-200 hover:bg-[#FF653F] hover:text-white"
@@ -99,7 +111,7 @@ const Header = () => {
                             <FaGithub size={16} />
                         </a>
                         <a
-                            href="https://www.linkedin.com/in/bintang-sinaga-62b552229"
+                            href={profile.socials.linkedin}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex h-9 w-9 items-center justify-center rounded-full border border-white/[0.06] bg-white/[0.03] text-[#888888] transition-all duration-200 hover:bg-[#FF653F] hover:text-white"
@@ -107,7 +119,7 @@ const Header = () => {
                             <FaLinkedin size={16} />
                         </a>
                         <a
-                            href="mailto:bintangsinaga007@gmail.com"
+                            href={`mailto:${profile.email}`}
                             className="flex h-9 w-9 items-center justify-center rounded-full border border-white/[0.06] bg-white/[0.03] text-[#888888] transition-all duration-200 hover:bg-[#FF653F] hover:text-white"
                         >
                             <FaEnvelope size={16} />

@@ -1,4 +1,4 @@
-const fromPublic = (path) => `${import.meta.env.BASE_URL}${path}`;
+const fromPublic = (path) => `${import.meta.env?.BASE_URL ?? '/'}${path}`;
 
 export const projects = [
     {

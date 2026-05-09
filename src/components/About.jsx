@@ -1,28 +1,28 @@
-// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { FaReact, FaNodeJs, FaPython, FaDocker, FaGitAlt, FaBrain } from 'react-icons/fa';
 import { SiExpress, SiMysql, SiPostgresql, SiMongodb, SiKubernetes, SiFigma, SiPrisma, SiFlutter, SiJavascript, SiFirebase } from 'react-icons/si';
+import { skills } from '../data/profile';
+
+const skillIcons = {
+    SiJavascript,
+    FaReact,
+    SiExpress,
+    FaNodeJs,
+    FaPython,
+    FaBrain,
+    SiFlutter,
+    FaGitAlt,
+    SiMysql,
+    SiPostgresql,
+    SiMongodb,
+    SiPrisma,
+    SiFirebase,
+    FaDocker,
+    SiKubernetes,
+    SiFigma,
+};
 
 const About = () => {
-    const skills = [
-        { name: 'JavaScript', icon: <SiJavascript />, color: 'text-yellow-400' },
-        { name: 'React', icon: <FaReact />, color: 'text-cyan-400' },
-        { name: 'Express', icon: <SiExpress />, color: 'text-gray-200' },
-        { name: 'Node.js', icon: <FaNodeJs />, color: 'text-green-500' },
-        { name: 'Python', icon: <FaPython />, color: 'text-yellow-300' },
-        { name: 'Machine Learning', icon: <FaBrain />, color: 'text-pink-500' },
-        { name: 'flutter', icon: <SiFlutter />, color: 'text-blue-400' },
-        { name: 'Git', icon: <FaGitAlt />, color: 'text-orange-500' },
-        { name: 'MySQL', icon: <SiMysql />, color: 'text-blue-400' },
-        { name: 'PostgreSQL', icon: <SiPostgresql />, color: 'text-blue-300' },
-        { name: 'MongoDB', icon: <SiMongodb />, color: 'text-green-400' },
-        { name: 'Prisma ORM', icon: <SiPrisma />, color: 'text-gray-400' },
-        { name: 'Firebase', icon: <SiFirebase />, color: 'text-orange-500' },
-        { name: 'Docker', icon: <FaDocker />, color: 'text-blue-500' },
-        { name: 'Kubernetes', icon: <SiKubernetes />, color: 'text-blue-600' },
-        { name: 'Figma', icon: <SiFigma />, color: 'text-pink-400' },
-    ];
-
     return (
         <section id="about" className="py-20">
             <div className="container mx-auto px-4">
@@ -46,17 +46,21 @@ const About = () => {
                             animate={{ x: ["0%", "-50%"] }}
                             transition={{ ease: "linear", duration: 25, repeat: Infinity }}
                         >
-                            {[...skills, ...skills].map((skill, index) => (
-                                <div
-                                    key={`${skill.name}-${index}`}
-                                    className="group flex w-[160px] flex-shrink-0 flex-col items-center justify-center gap-3 rounded-2xl border border-white/[0.06] bg-[#141414] p-4 transition-all hover:border-[#FF653F]/25 hover:bg-[#1a1a1a]"
-                                >
-                                    <div className={`text-4xl ${skill.color} transform group-hover:scale-110 transition-transform duration-300`}>
-                                        {skill.icon}
+                            {[...skills, ...skills].map((skill, index) => {
+                                const Icon = skillIcons[skill.icon];
+
+                                return (
+                                    <div
+                                        key={`${skill.name}-${index}`}
+                                        className="group flex w-[160px] flex-shrink-0 flex-col items-center justify-center gap-3 rounded-2xl border border-white/[0.06] bg-[#141414] p-4 transition-all hover:border-[#FF653F]/25 hover:bg-[#1a1a1a]"
+                                    >
+                                        <div className={`text-4xl ${skill.color} transform group-hover:scale-110 transition-transform duration-300`}>
+                                            {Icon && <Icon />}
+                                        </div>
+                                        <span className="font-medium text-[#888888] transition-colors group-hover:text-white">{skill.name}</span>
                                     </div>
-                                    <span className="font-medium text-[#888888] transition-colors group-hover:text-white">{skill.name}</span>
-                                </div>
-                            ))}
+                                );
+                            })}
                         </motion.div>
                     </div>
                 </motion.div>
