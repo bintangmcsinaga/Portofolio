@@ -4,6 +4,7 @@ import { FaCube } from 'react-icons/fa'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import About from '../components/About'
+import Education from '../components/Education'
 import WorkExperience from '../components/WorkExperience'
 import Projects from '../components/Projects'
 import Contact from '../components/Contact'
@@ -97,6 +98,7 @@ const Home = () => {
                     <>
                         <Hero />
                         <About />
+                        <Education />
                         <WorkExperience />
                         <Projects />
                         <Contact />

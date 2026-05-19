@@ -33,6 +33,23 @@ export const skills = [
     { name: 'Figma', icon: 'SiFigma', color: 'text-pink-400' },
 ];
 
+export const education = [
+    {
+        program: 'S1 Teknik Informatika',
+        institution: 'Universitas Mikroskil',
+        credential: 'Sarjana Komputer (S.Kom)',
+        period: 'Completed',
+        location: 'Indonesia',
+        gpa: '3.80/4.00',
+        transcriptFile: 'Transkrip Nilai.pdf',
+        highlights: [
+            'Earned a bachelor degree in Informatics Engineering with the Sarjana Komputer academic title.',
+            'Built a strong foundation in software development, database systems, algorithms, and applied computing.',
+            'Academic transcript is available for review through the linked public document.',
+        ],
+    },
+];
+
 export const experiences = [
     {
         role: 'Web Full Stack Developer',
