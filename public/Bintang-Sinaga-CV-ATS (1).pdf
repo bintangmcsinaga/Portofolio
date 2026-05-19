@@ -4,7 +4,7 @@
 << /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R] /Count 3 >>
+<< /Type /Pages /Kids [6 0 R 8 0 R] /Count 2 >>
 endobj
 3 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
@@ -13,7 +13,7 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
 endobj
 5 0 obj
-<< /Length 13125 >>
+<< /Length 13372 >>
 stream
 q
 1 1 1 rg
@@ -346,131 +346,101 @@ BT /F1 9.8 Tf 54.00 562.00 Td (pipelines.) Tj ET
 BT /F2 11.5 Tf 54.00 536.00 Td (TECHNICAL SKILLS) Tj ET
 BT /F1 9.8 Tf 54.00 519.00 Td (JavaScript, React, Express, Node.js, Python, Machine Learning, Flutter, Git, MySQL, PostgreSQL,) Tj ET
 BT /F1 9.8 Tf 54.00 506.00 Td (MongoDB, Prisma ORM, Firebase, Docker, Kubernetes, Figma) Tj ET
-BT /F2 11.5 Tf 54.00 480.00 Td (EDUCATION) Tj ET
-BT /F2 10.5 Tf 54.00 459.00 Td (S1 Teknik Informatika | Universitas Mikroskil) Tj ET
-BT /F1 9.5 Tf 54.00 445.00 Td (Sarjana Komputer \(S.Kom\) | Completed | Indonesia | GPA 3.80/4.00) Tj ET
-BT /F1 9.6 Tf 66.00 433.00 Td (- Earned a bachelor degree in Informatics Engineering with the Sarjana Komputer academic title.) Tj ET
-BT /F1 9.6 Tf 66.00 420.40 Td (- Built a strong foundation in software development, database systems, algorithms, and applied) Tj ET
-BT /F1 9.6 Tf 66.00 407.80 Td (computing.) Tj ET
-BT /F1 9.6 Tf 66.00 395.20 Td (- Academic transcript is available for review through the linked public document.) Tj ET
-BT /F2 11.5 Tf 54.00 370.60 Td (PROFESSIONAL EXPERIENCE) Tj ET
-BT /F2 10.5 Tf 54.00 349.60 Td (Web Full Stack Developer | Freelance) Tj ET
-BT /F1 9.5 Tf 54.00 335.60 Td (2023 - Present | Remote) Tj ET
-BT /F1 9.6 Tf 66.00 323.60 Td (- Developed full-stack web applications using React, Node.js, and MongoDB.) Tj ET
-BT /F1 9.6 Tf 66.00 311.00 Td (- Designed RESTful APIs and database schemas for small-to-mid scale products.) Tj ET
-BT /F1 9.6 Tf 66.00 298.40 Td (- Implemented authentication, role-based access, and audit-friendly logging.) Tj ET
-BT /F1 9.6 Tf 66.00 285.80 Td (- Optimized query performance and improved API response times.) Tj ET
-BT /F2 10.5 Tf 54.00 266.20 Td (Mobile App Developer \(Flutter\) | Freelance) Tj ET
-BT /F1 9.5 Tf 54.00 252.20 Td (2024 - Present | Remote) Tj ET
-BT /F1 9.6 Tf 66.00 240.20 Td (- Built cross-platform mobile applications using Flutter and Dart.) Tj ET
-BT /F1 9.6 Tf 66.00 227.60 Td (- Integrated RESTful APIs and third-party services for dynamic content.) Tj ET
-BT /F1 9.6 Tf 66.00 215.00 Td (- Implemented state management solutions \(Provider, Riverpod\) for scalable app architecture.) Tj ET
-BT /F1 9.6 Tf 66.00 202.40 Td (- Optimized app performance and reduced load times through efficient coding practices.) Tj ET
-BT /F2 10.5 Tf 54.00 182.80 Td (IT Support | Kantor Notaris Fransisca Panjaitan, S.H., M.Kn.) Tj ET
-BT /F1 9.5 Tf 54.00 168.80 Td (2021 - Present | Remote) Tj ET
-BT /F1 9.6 Tf 66.00 156.80 Td (- Provided technical support and troubleshooting for office IT infrastructure.) Tj ET
-BT /F1 9.6 Tf 66.00 144.20 Td (- Managed software installations, updates, and user access controls.) Tj ET
-BT /F1 9.6 Tf 66.00 131.60 Td (- Assisted in the transition to remote work setups and cloud-based collaboration tools.) Tj ET
-BT /F2 11.5 Tf 54.00 107.00 Td (SELECTED PROJECTS) Tj ET
-BT /F2 10.5 Tf 54.00 86.00 Td (Go Toba | Mobile Developer | January 2024) Tj ET
-BT /F1 9.5 Tf 54.00 72.00 Td (Tech: Flutter, Firebase) Tj ET
-BT /F1 9.2 Tf 54.00 60.00 Td (Go Toba is a Flutter-based mobile tourism application for the Lake Toba region that integrates login,) Tj ET
+BT /F2 11.5 Tf 54.00 480.00 Td (PROFESSIONAL EXPERIENCE) Tj ET
+BT /F2 10.5 Tf 54.00 459.00 Td (Web Full Stack Developer | Freelance) Tj ET
+BT /F1 9.5 Tf 54.00 445.00 Td (2023 - Present | Remote) Tj ET
+BT /F1 9.6 Tf 66.00 433.00 Td (- Developed full-stack web applications using React, Node.js, and MongoDB.) Tj ET
+BT /F1 9.6 Tf 66.00 420.40 Td (- Designed RESTful APIs and database schemas for small-to-mid scale products.) Tj ET
+BT /F1 9.6 Tf 66.00 407.80 Td (- Implemented authentication, role-based access, and audit-friendly logging.) Tj ET
+BT /F1 9.6 Tf 66.00 395.20 Td (- Optimized query performance and improved API response times.) Tj ET
+BT /F2 10.5 Tf 54.00 375.60 Td (Mobile App Developer \(Flutter\) | Freelance) Tj ET
+BT /F1 9.5 Tf 54.00 361.60 Td (2024 - Present | Remote) Tj ET
+BT /F1 9.6 Tf 66.00 349.60 Td (- Built cross-platform mobile applications using Flutter and Dart.) Tj ET
+BT /F1 9.6 Tf 66.00 337.00 Td (- Integrated RESTful APIs and third-party services for dynamic content.) Tj ET
+BT /F1 9.6 Tf 66.00 324.40 Td (- Implemented state management solutions \(Provider, Riverpod\) for scalable app architecture.) Tj ET
+BT /F1 9.6 Tf 66.00 311.80 Td (- Optimized app performance and reduced load times through efficient coding practices.) Tj ET
+BT /F2 10.5 Tf 54.00 292.20 Td (IT Support | Kantor Notaris Fransisca Panjaitan, S.H., M.Kn.) Tj ET
+BT /F1 9.5 Tf 54.00 278.20 Td (2021 - Present | Remote) Tj ET
+BT /F1 9.6 Tf 66.00 266.20 Td (- Provided technical support and troubleshooting for office IT infrastructure.) Tj ET
+BT /F1 9.6 Tf 66.00 253.60 Td (- Managed software installations, updates, and user access controls.) Tj ET
+BT /F1 9.6 Tf 66.00 241.00 Td (- Assisted in the transition to remote work setups and cloud-based collaboration tools.) Tj ET
+BT /F2 11.5 Tf 54.00 216.40 Td (SELECTED PROJECTS) Tj ET
+BT /F2 10.5 Tf 54.00 195.40 Td (Go Toba | Mobile Developer | January 2024) Tj ET
+BT /F1 9.5 Tf 54.00 181.40 Td (Tech: Flutter, Firebase) Tj ET
+BT /F1 9.2 Tf 54.00 169.40 Td (Go Toba is a Flutter-based mobile tourism application for the Lake Toba region that integrates login,) Tj ET
+BT /F1 9.2 Tf 54.00 157.70 Td (personalised recommendations, hotel/ticket bookings, virtual account payments, transaction history and) Tj ET
+BT /F1 9.2 Tf 54.00 146.00 Td (reviews, and the sharing of travel moments in a single Firebase-based platform with a bilingual interface and) Tj ET
+BT /F1 9.2 Tf 54.00 134.30 Td (consistent UI.) Tj ET
+BT /F1 9.6 Tf 66.00 122.60 Td (- User authentication and account lifecycle with Firebase Authentication \(email/password, Google) Tj ET
+BT /F1 9.6 Tf 66.00 110.00 Td (Sign-In, Facebook login\), plus email verification and password reset flows.) Tj ET
+BT /F1 9.6 Tf 66.00 97.40 Td (- Persistent user session and app preferences using shared_preferences \(login state, UID, selected) Tj ET
+BT /F1 9.6 Tf 66.00 84.80 Td (language\).) Tj ET
+BT /F1 9.6 Tf 66.00 72.20 Td (- Personalized home recommendations \(hotels, culinary, destinations\) powered by Cloud Firestore with) Tj ET
 endstream
 endobj
 6 0 obj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
 endobj
 7 0 obj
-<< /Length 5451 >>
+<< /Length 4022 >>
 stream
-BT /F1 9.2 Tf 54.00 744.00 Td (personalised recommendations, hotel/ticket bookings, virtual account payments, transaction history and) Tj ET
-BT /F1 9.2 Tf 54.00 732.30 Td (reviews, and the sharing of travel moments in a single Firebase-based platform with a bilingual interface and) Tj ET
-BT /F1 9.2 Tf 54.00 720.60 Td (consistent UI.) Tj ET
-BT /F1 9.6 Tf 66.00 708.90 Td (- User authentication and account lifecycle with Firebase Authentication \(email/password, Google) Tj ET
-BT /F1 9.6 Tf 66.00 696.30 Td (Sign-In, Facebook login\), plus email verification and password reset flows.) Tj ET
-BT /F1 9.6 Tf 66.00 683.70 Td (- Persistent user session and app preferences using shared_preferences \(login state, UID, selected) Tj ET
-BT /F1 9.6 Tf 66.00 671.10 Td (language\).) Tj ET
-BT /F1 9.6 Tf 66.00 658.50 Td (- Personalized home recommendations \(hotels, culinary, destinations\) powered by Cloud Firestore with) Tj ET
-BT /F1 9.6 Tf 66.00 645.90 Td (user tag-based matching logic.) Tj ET
-BT /F1 9.6 Tf 66.00 633.30 Td (- Hotel booking flow \(date selection, room selection, payment method, virtual account, booking) Tj ET
-BT /F1 9.6 Tf 66.00 620.70 Td (confirmation\) built with Flutter UI + Cloud Firestore.) Tj ET
-BT /F1 9.2 Tf 54.00 608.10 Td (Code: github.com/bintangmcsinaga/Go-Toba) Tj ET
-BT /F2 10.5 Tf 54.00 589.40 Td (My Portfolio | Frontend Developer | January 2026) Tj ET
-BT /F1 9.5 Tf 54.00 575.40 Td (Tech: React Vite, JavaScript, CI/CD, VPS) Tj ET
-BT /F1 9.2 Tf 54.00 563.40 Td (My previous portfolio site focused on minimalism and typography.) Tj ET
-BT /F1 9.6 Tf 66.00 551.70 Td (- Minimalist landing page with typography-first visual hierarchy.) Tj ET
-BT /F1 9.6 Tf 66.00 539.10 Td (- Custom section transitions and responsive spacing system.) Tj ET
-BT /F1 9.6 Tf 66.00 526.50 Td (- Lightweight architecture optimized for static hosting.) Tj ET
-BT /F1 9.6 Tf 66.00 513.90 Td (- CI/CD pipeline for automated deployment to VPS hosting.) Tj ET
-BT /F1 9.2 Tf 54.00 501.30 Td (Code: github.com/bintangmcsinaga/Portofolio) Tj ET
-BT /F2 10.5 Tf 54.00 482.60 Td (AFB_SenA | Backend Developer, Machine Learning Engineer | June 2025) Tj ET
-BT /F1 9.5 Tf 54.00 468.60 Td (Tech: React, Express, FastApI, MongoDB, Python, Machine Learning) Tj ET
-BT /F1 9.2 Tf 54.00 456.60 Td (AFB_SENA is an end-to-end sentiment analysis platform that unifies multi-platform data extraction, text) Tj ET
-BT /F1 9.2 Tf 54.00 444.90 Td (preprocessing, sentiment labeling, and RoBERTa-based inference in a single web workflow.) Tj ET
-BT /F1 9.6 Tf 66.00 433.20 Td (- Authentication \(login/register\) + protected routes: Express.js, MongoDB/Mongoose, JWT, bcryptjs,) Tj ET
-BT /F1 9.6 Tf 66.00 420.60 Td (React Router \(ProtectedRoute\).) Tj ET
-BT /F1 9.6 Tf 66.00 408.00 Td (- YouTube,Play Store, X comment extraction: FastAPI, google-api-python-client, pandas, Excel export.) Tj ET
-BT /F1 9.6 Tf 66.00 395.40 Td (- HTML element cleansing: BeautifulSoup4 via /clean-html endpoint + preprocessing UI pipeline.) Tj ET
-BT /F1 9.6 Tf 66.00 382.80 Td (- Text normalization & slang expansion: regex, contractions, custom slang dictionary \(kamus_slang.py\)) Tj ET
-BT /F1 9.6 Tf 66.00 370.20 Td (via /clean-text.) Tj ET
-BT /F1 9.2 Tf 54.00 357.60 Td (Code: github.com/bintangmcsinaga/sistem-rekomendasi-pariwisata-danau-toba) Tj ET
-BT /F2 10.5 Tf 54.00 338.90 Td (SIMRS API | Backend Developer | March 2026) Tj ET
-BT /F1 9.5 Tf 54.00 324.90 Td (Tech: PHP 8.2, Laravel 12, Sanctum, BPJS VClaim, Spatie Permission, REST API) Tj ET
-BT /F1 9.2 Tf 54.00 312.90 Td (SIMRS API is a Laravel 12 backend service for hospital information system integration, focused on BPJS VClaim) Tj ET
-BT /F1 9.2 Tf 54.00 301.20 Td (bridging, SEP workflows, monitoring, references, and access control.) Tj ET
-BT /F1 9.6 Tf 66.00 289.50 Td (- Laravel 12 REST API with a versioned /api/v1 base route and consistent metaData/response JSON) Tj ET
-BT /F1 9.6 Tf 66.00 276.90 Td (format.) Tj ET
-BT /F1 9.6 Tf 66.00 264.30 Td (- BPJS VClaim V3 bridge service with HMAC signature headers, configurable environment credentials,) Tj ET
-BT /F1 9.6 Tf 66.00 251.70 Td (timeout handling, and request logging.) Tj ET
-BT /F1 9.6 Tf 66.00 239.10 Td (- Encrypted BPJS response handling using AES-256-CBC decryption and LZString decompression before) Tj ET
-BT /F1 9.6 Tf 66.00 226.50 Td (returning API payloads.) Tj ET
-BT /F1 9.6 Tf 66.00 213.90 Td (- Participant lookup, SEP search, SEP insert, SEP update, SEP delete, and 90-day participant service) Tj ET
-BT /F1 9.6 Tf 66.00 201.30 Td (history endpoints.) Tj ET
-BT /F1 9.2 Tf 54.00 188.70 Td (Code: github.com/bintangmcsinaga/simrs-api) Tj ET
-BT /F2 10.5 Tf 54.00 170.00 Td (Remind | Mobile Developer | March 2026) Tj ET
-BT /F1 9.5 Tf 54.00 156.00 Td (Tech: Flutter, Firebase, NLP-based) Tj ET
-BT /F1 9.2 Tf 54.00 144.00 Td (Remind is a Flutter app where users write free-form activity notes that are analyzed to detect habits,) Tj ET
-BT /F1 9.2 Tf 54.00 132.30 Td (predict the next occurrence, and send automatic reminders.) Tj ET
-BT /F1 9.6 Tf 66.00 120.60 Td (- Long text note input \(single multi-line field\).) Tj ET
-BT /F1 9.6 Tf 66.00 108.00 Td (- Create, edit, delete, and list notes.) Tj ET
-BT /F1 9.6 Tf 66.00 95.40 Td (- Rule-based NLP to detect activity and category from notes.) Tj ET
-BT /F1 9.6 Tf 66.00 82.80 Td (- Notifications/reminders driven by predictions.) Tj ET
-BT /F1 9.2 Tf 54.00 70.20 Td (Code: github.com/bintangmcsinaga/remind) Tj ET
+BT /F1 9.6 Tf 66.00 744.00 Td (user tag-based matching logic.) Tj ET
+BT /F1 9.6 Tf 66.00 731.40 Td (- Hotel booking flow \(date selection, room selection, payment method, virtual account, booking) Tj ET
+BT /F1 9.6 Tf 66.00 718.80 Td (confirmation\) built with Flutter UI + Cloud Firestore.) Tj ET
+BT /F1 9.2 Tf 54.00 706.20 Td (Code: github.com/bintangmcsinaga/Go-Toba) Tj ET
+BT /F2 10.5 Tf 54.00 687.50 Td (My Portfolio | Frontend Developer | January 2026) Tj ET
+BT /F1 9.5 Tf 54.00 673.50 Td (Tech: React Vite, JavaScript, CI/CD, VPS) Tj ET
+BT /F1 9.2 Tf 54.00 661.50 Td (My previous portfolio site focused on minimalism and typography.) Tj ET
+BT /F1 9.6 Tf 66.00 649.80 Td (- Minimalist landing page with typography-first visual hierarchy.) Tj ET
+BT /F1 9.6 Tf 66.00 637.20 Td (- Custom section transitions and responsive spacing system.) Tj ET
+BT /F1 9.6 Tf 66.00 624.60 Td (- Lightweight architecture optimized for static hosting.) Tj ET
+BT /F1 9.6 Tf 66.00 612.00 Td (- CI/CD pipeline for automated deployment to VPS hosting.) Tj ET
+BT /F1 9.2 Tf 54.00 599.40 Td (Code: github.com/bintangmcsinaga/Portofolio) Tj ET
+BT /F2 10.5 Tf 54.00 580.70 Td (AFB_SenA | Backend Developer, Machine Learning Engineer | June 2025) Tj ET
+BT /F1 9.5 Tf 54.00 566.70 Td (Tech: React, Express, FastApI, MongoDB, Python, Machine Learning) Tj ET
+BT /F1 9.2 Tf 54.00 554.70 Td (AFB_SENA is an end-to-end sentiment analysis platform that unifies multi-platform data extraction, text) Tj ET
+BT /F1 9.2 Tf 54.00 543.00 Td (preprocessing, sentiment labeling, and RoBERTa-based inference in a single web workflow.) Tj ET
+BT /F1 9.6 Tf 66.00 531.30 Td (- Authentication \(login/register\) + protected routes: Express.js, MongoDB/Mongoose, JWT, bcryptjs,) Tj ET
+BT /F1 9.6 Tf 66.00 518.70 Td (React Router \(ProtectedRoute\).) Tj ET
+BT /F1 9.6 Tf 66.00 506.10 Td (- YouTube,Play Store, X comment extraction: FastAPI, google-api-python-client, pandas, Excel export.) Tj ET
+BT /F1 9.6 Tf 66.00 493.50 Td (- HTML element cleansing: BeautifulSoup4 via /clean-html endpoint + preprocessing UI pipeline.) Tj ET
+BT /F1 9.6 Tf 66.00 480.90 Td (- Text normalization & slang expansion: regex, contractions, custom slang dictionary \(kamus_slang.py\)) Tj ET
+BT /F1 9.6 Tf 66.00 468.30 Td (via /clean-text.) Tj ET
+BT /F1 9.2 Tf 54.00 455.70 Td (Code: github.com/bintangmcsinaga/sistem-rekomendasi-pariwisata-danau-toba) Tj ET
+BT /F2 10.5 Tf 54.00 437.00 Td (Remind | Mobile Developer | March 2026) Tj ET
+BT /F1 9.5 Tf 54.00 423.00 Td (Tech: Flutter, Firebase, NLP-based) Tj ET
+BT /F1 9.2 Tf 54.00 411.00 Td (Remind is a Flutter app where users write free-form activity notes that are analyzed to detect habits,) Tj ET
+BT /F1 9.2 Tf 54.00 399.30 Td (predict the next occurrence, and send automatic reminders.) Tj ET
+BT /F1 9.6 Tf 66.00 387.60 Td (- Long text note input \(single multi-line field\).) Tj ET
+BT /F1 9.6 Tf 66.00 375.00 Td (- Create, edit, delete, and list notes.) Tj ET
+BT /F1 9.6 Tf 66.00 362.40 Td (- Rule-based NLP to detect activity and category from notes.) Tj ET
+BT /F1 9.6 Tf 66.00 349.80 Td (- Notifications/reminders driven by predictions.) Tj ET
+BT /F1 9.2 Tf 54.00 337.20 Td (Code: github.com/bintangmcsinaga/remind) Tj ET
+BT /F2 11.5 Tf 54.00 313.50 Td (CERTIFICATIONS) Tj ET
+BT /F1 9.6 Tf 66.00 296.50 Td (- Red Hat System Administration I \(RH124-8.2\) - Red Hat, June 2023 \(RH124-8.2\)) Tj ET
+BT /F1 9.6 Tf 66.00 283.90 Td (- HCIA-AI V3.0 Course - Huawei Talent Online, July 2023 \(HCIA-AI-V3.0\)) Tj ET
+BT /F1 9.6 Tf 66.00 271.30 Td (- HCIA-Datacom V1.0 Course - Huawei Talent Online, March 2024 \(HCIA-Datacom-V1.0\)) Tj ET
+BT /F1 9.6 Tf 66.00 258.70 Td (- Pengembangan Aplikasi Android Intermediate - Dicoding Indonesia, June 2024 \(2VX3R5W94ZYQ\)) Tj ET
+BT /F1 9.6 Tf 66.00 246.10 Td (- Bangkit Academy 2024 Batch 1 - Mobile Development - Bangkit Academy, July 2024 \(A172D4KY4573\)) Tj ET
+BT /F1 9.6 Tf 66.00 233.50 Td (- Magang dan Studi Independen Bersertifikat Batch 6 - Kampus Merdeka, July 2024 \(MSIB-Batch-6\)) Tj ET
 endstream
 endobj
 8 0 obj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 7 0 R >>
 endobj
-9 0 obj
-<< /Length 810 >>
-stream
-BT /F2 11.5 Tf 54.00 744.00 Td (CERTIFICATIONS) Tj ET
-BT /F1 9.6 Tf 66.00 727.00 Td (- Red Hat System Administration I \(RH124-8.2\) - Red Hat, June 2023 \(RH124-8.2\)) Tj ET
-BT /F1 9.6 Tf 66.00 714.40 Td (- HCIA-AI V3.0 Course - Huawei Talent Online, July 2023 \(HCIA-AI-V3.0\)) Tj ET
-BT /F1 9.6 Tf 66.00 701.80 Td (- HCIA-Datacom V1.0 Course - Huawei Talent Online, March 2024 \(HCIA-Datacom-V1.0\)) Tj ET
-BT /F1 9.6 Tf 66.00 689.20 Td (- Pengembangan Aplikasi Android Intermediate - Dicoding Indonesia, June 2024 \(2VX3R5W94ZYQ\)) Tj ET
-BT /F1 9.6 Tf 66.00 676.60 Td (- Bangkit Academy 2024 Batch 1 - Mobile Development - Bangkit Academy, July 2024 \(A172D4KY4573\)) Tj ET
-BT /F1 9.6 Tf 66.00 664.00 Td (- Magang dan Studi Independen Bersertifikat Batch 6 - Kampus Merdeka, July 2024 \(MSIB-Batch-6\)) Tj ET
-endstream
-endobj
-10 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 9 0 R >>
-endobj
 xref
-0 11
+0 9
 0000000000 65535 f 
 0000000059 00000 n 
 0000000108 00000 n 
-0000000178 00000 n 
-0000000248 00000 n 
-0000000323 00000 n 
-0000013501 00000 n 
-0000013637 00000 n 
-0000019140 00000 n 
-0000019276 00000 n 
-0000020137 00000 n 
+0000000171 00000 n 
+0000000241 00000 n 
+0000000316 00000 n 
+0000013741 00000 n 
+0000013877 00000 n 
+0000017951 00000 n 
 trailer
-<< /Size 11 /Root 1 0 R >>
+<< /Size 9 /Root 1 0 R >>
 startxref
-20274
+18087
 %%EOF

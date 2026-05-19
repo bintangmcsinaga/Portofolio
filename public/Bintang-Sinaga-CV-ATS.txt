@@ -8,6 +8,13 @@ Backend-focused developer who enjoys designing scalable systems, dependable APIs
 TECHNICAL SKILLS
 JavaScript, React, Express, Node.js, Python, Machine Learning, Flutter, Git, MySQL, PostgreSQL, MongoDB, Prisma ORM, Firebase, Docker, Kubernetes, Figma
 
+EDUCATION
+S1 Teknik Informatika | Universitas Mikroskil
+Sarjana Komputer (S.Kom) | Completed | Indonesia | GPA 3.80/4.00
+- Earned a bachelor degree in Informatics Engineering with the Sarjana Komputer academic title.
+- Built a strong foundation in software development, database systems, algorithms, and applied computing.
+- Academic transcript is available for review through the linked public document.
+
 PROFESSIONAL EXPERIENCE
 Web Full Stack Developer | Freelance
 2023 - Present | Remote
@@ -56,6 +63,15 @@ AFB_SENA is an end-to-end sentiment analysis platform that unifies multi-platfor
 - HTML element cleansing: BeautifulSoup4 via /clean-html endpoint + preprocessing UI pipeline.
 - Text normalization & slang expansion: regex, contractions, custom slang dictionary (kamus_slang.py) via /clean-text.
 Code: github.com/bintangmcsinaga/sistem-rekomendasi-pariwisata-danau-toba
+
+SIMRS API | Backend Developer | March 2026
+Tech: PHP 8.2, Laravel 12, Sanctum, BPJS VClaim, Spatie Permission, REST API
+SIMRS API is a Laravel 12 backend service for hospital information system integration, focused on BPJS VClaim bridging, SEP workflows, monitoring, references, and access control.
+- Laravel 12 REST API with a versioned /api/v1 base route and consistent metaData/response JSON format.
+- BPJS VClaim V3 bridge service with HMAC signature headers, configurable environment credentials, timeout handling, and request logging.
+- Encrypted BPJS response handling using AES-256-CBC decryption and LZString decompression before returning API payloads.
+- Participant lookup, SEP search, SEP insert, SEP update, SEP delete, and 90-day participant service history endpoints.
+Code: github.com/bintangmcsinaga/simrs-api
 
 Remind | Mobile Developer | March 2026
 Tech: Flutter, Firebase, NLP-based

@@ -1,7 +1,7 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { certifications, experiences, profile, skills } from '../src/data/profile.js';
+import { certifications, education, experiences, profile, skills } from '../src/data/profile.js';
 import { projects } from '../src/data/projects.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -327,6 +327,18 @@ const buildItems = () => {
     addLine(items, 'TECHNICAL SKILLS', 'section');
     addLine(items, skills.map((skill) => skill.name).join(', '), 'body');
     addSpace(items, 4);
+
+    addLine(items, 'EDUCATION', 'section');
+    education.forEach((item) => {
+        addLine(items, `${item.program} | ${item.institution}`, 'subheading');
+        addLine(
+            items,
+            [item.credential, item.period, item.location, item.gpa ? `GPA ${item.gpa}` : null].filter(Boolean).join(' | '),
+            'meta'
+        );
+        item.highlights.forEach((highlight) => addBullet(items, highlight));
+        addSpace(items, 3);
+    });
 
     addLine(items, 'PROFESSIONAL EXPERIENCE', 'section');
     experiences.forEach((experience) => {
