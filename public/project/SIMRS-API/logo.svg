@@ -1,0 +1,18 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1280" height="720" fill="#101010"/>
+  <rect x="72" y="72" width="1136" height="576" rx="36" fill="#151515" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+  <rect x="122" y="122" width="1036" height="476" rx="28" fill="#0D0D0D" stroke="rgba(255,101,63,0.2)" stroke-width="2"/>
+  <rect x="176" y="176" width="272" height="368" rx="24" fill="#141414" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+  <path d="M312 242v236" stroke="#FF653F" stroke-width="22" stroke-linecap="round"/>
+  <path d="M194 360h236" stroke="#FF653F" stroke-width="22" stroke-linecap="round"/>
+  <rect x="512" y="178" width="470" height="64" rx="18" fill="#1A1A1A" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+  <rect x="512" y="282" width="590" height="64" rx="18" fill="#1A1A1A" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+  <rect x="512" y="386" width="390" height="64" rx="18" fill="#1A1A1A" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+  <circle cx="544" cy="210" r="9" fill="#45D6C6"/>
+  <circle cx="544" cy="314" r="9" fill="#45D6C6"/>
+  <circle cx="544" cy="418" r="9" fill="#45D6C6"/>
+  <path d="M1016 220h70c32 0 58 26 58 58v164c0 32-26 58-58 58H974" stroke="#FF653F" stroke-width="12" stroke-linecap="round"/>
+  <path d="M974 500l42-42m-42 42l42 42" stroke="#FF653F" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="512" y="550" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800" letter-spacing="0">SIMRS API</text>
+  <text x="516" y="592" fill="#999999" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="600" letter-spacing="4">LARAVEL BPJS VCLAIM BACKEND</text>
+</svg>
