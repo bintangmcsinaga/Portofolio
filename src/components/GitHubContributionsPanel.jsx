@@ -5,11 +5,11 @@ const GITHUB_USERNAME = 'bintangmcsinaga';
 const START_YEAR = 2025;
 const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const LEVEL_CLASSES = [
-    'bg-[#2a165f]',
-    'bg-[#452E5A]',
-    'bg-[#6f3853]',
-    'bg-[#c95542]',
-    'bg-[#FF653F]',
+    'bg-[#ebedf0]', // level 0 - abu abu (tidak ada contribution)
+    'bg-[#9be9a8]', // level 1 - hijau sangat muda
+    'bg-[#40c463]', // level 2 - hijau muda
+    'bg-[#30a14e]', // level 3 - hijau sedang
+    'bg-[#216e39]', // level 4 - hijau tua
 ];
 
 const toDateKey = (date) => {
