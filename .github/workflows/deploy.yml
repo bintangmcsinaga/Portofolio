@@ -28,4 +28,4 @@ jobs:
       - name: Deploy to Server
         run: |
           mkdir -p /var/www/app/Portofolio/dist
-          rsync -av --delete dist/ /var/www/app/Portofolio/dist/
+          rsync -rv --delete --no-perms --no-owner --no-group dist/ /var/www/app/Portofolio/dist/
